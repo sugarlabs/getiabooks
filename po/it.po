@@ -1,0 +1,113 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-08-11 15:06-0500\n"
+"PO-Revision-Date: 2009-12-22 09:22-0400\n"
+"Last-Translator: Carlo Falciola <cfalciola@yahoo.it>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 1.2.1\n"
+
+#: activity/activity.info:2
+msgid "Get IA Books"
+msgstr "Trova Libri di Internet Archive"
+
+#: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:74
+msgid "Get Book"
+msgstr "Trova un Libro"
+
+#: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:150
+msgid "Books"
+msgstr "Libri"
+
+#: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:166
+msgid "Enter words from the Author or Title to begin search"
+msgstr "Inserisci dati su autore o titolo per iniziare la ricerca."
+
+#: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:188
+msgid "Title"
+msgstr "Titolo"
+
+#: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:193
+#: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:242
+#: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:407
+msgid "Volume"
+msgstr "Volume"
+
+#: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:201
+msgid "Author"
+msgstr "Autore"
+
+#: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:206
+#: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:252
+msgid "Language"
+msgstr "Lingua"
+
+#: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:250
+msgid "Subject"
+msgstr "Soggetto"
+
+#: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:251
+msgid "Publisher"
+msgstr "Editore"
+
+#: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:261
+msgid "Download URL"
+msgstr "Scarica dalla URL"
+
+#: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:268
+msgid "Performing lookup, please wait"
+msgstr "Ricerca in corso, per favore attendere..."
+
+#: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:273
+#: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:305
+#: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:319
+#: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:357
+#: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:394
+msgid "Error"
+msgstr "Errore"
+
+#: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:273
+msgid "You must enter at least one search word."
+msgstr "Bisogna inserire almeno una parola per la ricerca."
+
+#: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:305
+msgid "Connection timed out for CSV: "
+msgstr "Connessione fuori tempo massimo per CSV: "
+
+#: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:319
+msgid "Error getting CSV"
+msgstr "Errore nel rintracciare CSV"
+
+#: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:333
+msgid "Finished"
+msgstr "Finito"
+
+#: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:357
+msgid "Connection timed out for "
+msgstr "Connessione fuori tempo massimo per "
+
+#: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:394
+msgid "Could not download "
+msgstr "Non posso scaricare "
+
+#: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:394
+msgid " path in catalog is incorrect.  "
+msgstr " il percorso nel catalogo non è corretto.  "
+
+#: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:427
+msgid "Success"
+msgstr "Successo"
+
+#: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:427
+msgid " added to Journal."
+msgstr " scritto nel Diario"
