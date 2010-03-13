@@ -1,6 +1,6 @@
-#! /usr/bin/env python
+# GetIABooksActivity.py
 
-# Copyright (C) 2009 James D. Simmons
+# Copyright (C) 2009, 2010 James D. Simmons
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -24,6 +24,16 @@ import gtk
 import string
 import csv
 import urllib
+
+_NEW_TOOLBAR_SUPPORT = True
+try:
+    from sugar.graphics.toolbarbox import ToolbarBox
+    from sugar.graphics.toolbarbox import ToolbarButton
+    from sugar.activity.widgets import StopButton
+    from mybutton import MyActivityToolbarButton
+except:
+    _NEW_TOOLBAR_SUPPORT = False
+
 from sugar.graphics.toolbutton import ToolButton
 from sugar.graphics.menuitem import MenuItem
 from sugar.graphics.toolcombobox import ToolComboBox
@@ -140,18 +150,11 @@ class GetIABooksActivity(activity.Activity):
         "The entry point to the Activity"
         activity.Activity.__init__(self, handle)
  
-        toolbox = activity.ActivityToolbox(self)
-        activity_toolbar = toolbox.get_activity_toolbar()
-        activity_toolbar.keep.props.visible = False
-        activity_toolbar.share.props.visible = False
-        self.set_toolbox(toolbox)
+        if _NEW_TOOLBAR_SUPPORT:
+            self.create_new_toolbar()
+        else:
+            self.create_old_toolbar()
         
-        self._books_toolbar = BooksToolbar()
-        toolbox.add_toolbar(_('Books'), self._books_toolbar)
-        self._books_toolbar.set_activity(self)
-        self._books_toolbar.show()
-
-        toolbox.show()
         self.scrolled = gtk.ScrolledWindow()
         self.scrolled.set_policy(gtk.POLICY_NEVER, gtk.POLICY_AUTOMATIC)
         self.scrolled.props.shadow_type = gtk.SHADOW_NONE
@@ -225,8 +228,89 @@ class GetIABooksActivity(activity.Activity):
         self.list_scroller.show()
         self.progressbar.hide()
 
+    def create_old_toolbar(self):
+        toolbox = activity.ActivityToolbox(self)
+        activity_toolbar = toolbox.get_activity_toolbar()
+        activity_toolbar.keep.props.visible = False
+        activity_toolbar.share.props.visible = False
+        self.set_toolbox(toolbox)
+
+        self._books_toolbar = BooksToolbar()
+        toolbox.add_toolbar(_('Books'), self._books_toolbar)
+        self._books_toolbar.set_activity(self)
+        self._books_toolbar.show()
+
+        toolbox.show()
         self.toolbox.set_current_toolbar(_TOOLBAR_BOOKS)
         self._books_toolbar.search_entry.grab_focus()
+        
+    def create_new_toolbar(self):
+        toolbar_box = ToolbarBox()
+
+        activity_button = MyActivityToolbarButton(self)
+        toolbar_box.toolbar.insert(activity_button, 0)
+        activity_button.show()
+
+        book_search_item = gtk.ToolItem()
+
+        self.search_entry = gtk.Entry()
+        self.search_entry.connect('activate', self.search_entry_activate_cb)
+
+        width = int(gtk.gdk.screen_width() / 2.1)
+        self.search_entry.set_size_request(width, -1)
+
+        book_search_item.add(self.search_entry)
+        self.search_entry.show()
+
+        toolbar_box.toolbar.insert(book_search_item, -1)
+        book_search_item.show()
+
+        self._download = ToolButton('go-down')
+        self._download.set_tooltip(_('Get Book'))
+        self._download.props.sensitive = False
+        self._download.connect('clicked', self._get_book_cb)
+        toolbar_box.toolbar.insert(self._download, -1)
+        self._download.show()
+
+        self.format_combo = ComboBox()
+        self.format_combo.connect('changed', self.format_changed_cb)
+        self.format_combo.append_item('.djvu', 'Deja Vu')
+        self.format_combo.append_item('_bw.pdf', 'B/W PDF')
+        self.format_combo.append_item('.pdf', 'Color PDF')
+        self.format_combo.set_active(0)
+        self.format_combo.props.sensitive = False
+        combotool = ToolComboBox(self.format_combo)
+        toolbar_box.toolbar.insert(combotool, -1)
+        combotool.show()
+
+        self.search_entry.grab_focus()
+
+        separator = gtk.SeparatorToolItem()
+        separator.props.draw = False
+        separator.set_expand(True)
+        toolbar_box.toolbar.insert(separator, -1)
+        separator.show()
+
+        stop_button = StopButton(self)
+        stop_button.props.accelerator = '<Ctrl><Shift>Q'
+        toolbar_box.toolbar.insert(stop_button, -1)
+        stop_button.show()
+
+        self.set_toolbar_box(toolbar_box)
+        toolbar_box.show()
+
+    def format_changed_cb(self, combo):
+        self.show_book_data()
+
+    def search_entry_activate_cb(self, entry):
+        self.find_books(entry.props.text)
+
+    def _get_book_cb(self, button):
+        self.get_book()
+ 
+    def enable_button(self,  state):
+        self._download.props.sensitive = state
+        self.format_combo.props.sensitive = state
 
     def selection_cb(self, selection):
         self.clear_downloaded_bytes()
@@ -256,13 +340,22 @@ class GetIABooksActivity(activity.Activity):
             self.show_book_data()
 
     def show_book_data(self):
-        format = self._books_toolbar.format_combo.props.value
+        if _NEW_TOOLBAR_SUPPORT:
+            format = self.format_combo.props.value
+        else:
+            format = self._books_toolbar.format_combo.props.value
         textbuffer = self.textview.get_buffer()
         textbuffer.set_text(self.book_data + _('Download URL') + ': ' + self.download_url + format)
-        self._books_toolbar.enable_button(True)
+        if _NEW_TOOLBAR_SUPPORT:
+            self.enable_button(True)
+        else:
+            self._books_toolbar.enable_button(True)
 
     def find_books(self, search_text):
-        self._books_toolbar.enable_button(False)
+        if _NEW_TOOLBAR_SUPPORT:
+            self.enable_button(False)
+        else:
+            self._books_toolbar.enable_button(False)
         self.clear_downloaded_bytes()
         textbuffer = self.textview.get_buffer()
         textbuffer.set_text(_('Performing lookup, please wait') + '...')
@@ -271,7 +364,10 @@ class GetIABooksActivity(activity.Activity):
         search_tuple = search_text.lower().split()
         if len(search_tuple) == 0:
             self._alert(_('Error'), _('You must enter at least one search word.'))
-            self._books_toolbar.search_entry.grab_focus()
+            if _NEW_TOOLBAR_SUPPORT:
+                self.search_entry.grab_focus()
+            else:
+                self._books_toolbar.search_entry.grab_focus()
             return
         FL = urllib.quote('fl[]')
         SORT = urllib.quote('sort[]')
@@ -284,9 +380,13 @@ class GetIABooksActivity(activity.Activity):
         gobject.idle_add(self.download_csv,  self.search_url)
     
     def get_book(self):
-        self._books_toolbar.enable_button(False)
+        if _NEW_TOOLBAR_SUPPORT:
+            self.enable_button(False)
+            format = self.format_combo.props.value
+        else:
+            self._books_toolbar.enable_button(False)
+            format = self._books_toolbar.format_combo.props.value
         self.progressbar.show()
-        format = self._books_toolbar.format_combo.props.value
         gobject.idle_add(self.download_book,  self.download_url + format)
         
     def download_csv(self,  url):
@@ -388,7 +488,10 @@ class GetIABooksActivity(activity.Activity):
 
     def _get_book_error_cb(self, getter, err):
         self.treeview.props.sensitive = True
-        self._books_toolbar.enable_button(True)
+        if _NEW_TOOLBAR_SUPPORT:
+            self.enable_button(True)
+        else:
+            self._books_toolbar.enable_button(True)
         self.progressbar.hide()
         _logger.debug("Error getting document: %s", err)
         self._alert(_('Error'), _('Could not download ') + self.selected_title + _(' path in catalog is incorrect.  ' \
@@ -410,7 +513,10 @@ class GetIABooksActivity(activity.Activity):
         journal_entry.metadata['title'] = journal_title
         journal_entry.metadata['title_set_by_user'] = '1'
         journal_entry.metadata['keep'] = '0'
-        format = self._books_toolbar.format_combo.props.value
+        if _NEW_TOOLBAR_SUPPORT:
+            format = self.format_combo.props.value
+        else:
+            format = self._books_toolbar.format_combo.props.value
         if format == '.djvu':
             journal_entry.metadata['mime_type'] = 'image/vnd.djvu'
         if format == '.pdf' or format == '_bw.pdf':
