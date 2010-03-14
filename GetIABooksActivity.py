@@ -17,25 +17,19 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 import os
 import logging
-import tempfile
 import time
-import pygtk
 import gtk
-import string
 import csv
 import urllib
 
 _NEW_TOOLBAR_SUPPORT = True
 try:
     from sugar.graphics.toolbarbox import ToolbarBox
-    from sugar.graphics.toolbarbox import ToolbarButton
     from sugar.activity.widgets import StopButton
-    from mybutton import MyActivityToolbarButton
 except:
     _NEW_TOOLBAR_SUPPORT = False
 
 from sugar.graphics.toolbutton import ToolButton
-from sugar.graphics.menuitem import MenuItem
 from sugar.graphics.toolcombobox import ToolComboBox
 from sugar.graphics.combobox import ComboBox
 from sugar import profile
@@ -44,8 +38,6 @@ from sugar import network
 from sugar.datastore import datastore
 from sugar.graphics.alert import NotifyAlert
 from gettext import gettext as _
-import pango
-import dbus
 import gobject
 
 _TOOLBAR_BOOKS = 1
@@ -146,9 +138,9 @@ class ReadURLDownloader(network.GlibURLDownloader):
 READ_STREAM_SERVICE = 'read-activity-http'
 
 class GetIABooksActivity(activity.Activity):
-    def __init__(self, handle):
+    def __init__(self, handle, create_jobject=True):
         "The entry point to the Activity"
-        activity.Activity.__init__(self, handle)
+        activity.Activity.__init__(self, handle,  False)
  
         if _NEW_TOOLBAR_SUPPORT:
             self.create_new_toolbar()
@@ -228,6 +220,10 @@ class GetIABooksActivity(activity.Activity):
         self.list_scroller.show()
         self.progressbar.hide()
 
+    def close(self,  skip_save=False):
+        "Override the close method so we don't try to create a Journal entry."
+        activity.Activity.close(self,  True)
+
     def create_old_toolbar(self):
         toolbox = activity.ActivityToolbox(self)
         activity_toolbar = toolbox.get_activity_toolbar()
@@ -246,10 +242,6 @@ class GetIABooksActivity(activity.Activity):
         
     def create_new_toolbar(self):
         toolbar_box = ToolbarBox()
-
-        activity_button = MyActivityToolbarButton(self)
-        toolbar_box.toolbar.insert(activity_button, 0)
-        activity_button.show()
 
         book_search_item = gtk.ToolItem()
 
@@ -435,7 +427,7 @@ class GetIABooksActivity(activity.Activity):
         reader.next() # skip the first header row.
         for row in reader:
             if len(row) < 9:
-                _alert("Server Error",  self.search_url)
+                self._alert("Server Error",  self.search_url)
                 return
             iter = self.ls.append()
             self.ls.set(iter, 0, row[0],  1,  row[1],  2,  row[2],  3,  row[3],  4,  row[4],  5,  row[5],  \

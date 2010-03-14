@@ -4,7 +4,6 @@ setup.py
 activity/get-ia-books.svg
 activity/activity.info
 po/GetIABooks.pot
-mybutton.py
 locale/bg/activity.linfo
 locale/bg/LC_MESSAGES/org.laptop.sugar.GetIABooksActivity.mo
 locale/gu/activity.linfo
