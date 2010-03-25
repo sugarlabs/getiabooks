@@ -7,15 +7,15 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-08-11 15:06-0500\n"
-"PO-Revision-Date: 2009-12-22 09:22-0400\n"
-"Last-Translator: Carlo Falciola <cfalciola@yahoo.it>\n"
+"PO-Revision-Date: 2010-03-25 22:29+0200\n"
+"Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 1.2.1\n"
+"X-Generator: Pootle 2.0.3\n"
 
 #: activity/activity.info:2
 msgid "Get IA Books"
@@ -31,7 +31,7 @@ msgstr "Libri"
 
 #: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:166
 msgid "Enter words from the Author or Title to begin search"
-msgstr "Inserisci dati su autore o titolo per iniziare la ricerca."
+msgstr "Inserisci dati su autore o titolo per iniziare la ricerca"
 
 #: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:188
 msgid "Title"
@@ -66,7 +66,7 @@ msgstr "Scarica dalla URL"
 
 #: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:268
 msgid "Performing lookup, please wait"
-msgstr "Ricerca in corso, per favore attendere..."
+msgstr "Ricerca in corso, per favore attendere"
 
 #: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:273
 #: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:305
@@ -110,4 +110,4 @@ msgstr "Successo"
 
 #: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:427
 msgid " added to Journal."
-msgstr " scritto nel Diario"
+msgstr " scritto nel Diario."
