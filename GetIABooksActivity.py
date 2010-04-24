@@ -84,6 +84,7 @@ class BooksToolbar(gtk.Toolbar):
         self.format_combo.append_item('.djvu', 'Deja Vu')
         self.format_combo.append_item('_bw.pdf', 'B/W PDF')
         self.format_combo.append_item('.pdf', 'Color PDF')
+        self.format_combo.append_item('.epub', 'EPUB')
         self.format_combo.set_active(0)
         self.format_combo.props.sensitive = False
         combotool = ToolComboBox(self.format_combo)
@@ -269,6 +270,7 @@ class GetIABooksActivity(activity.Activity):
         self.format_combo.append_item('.djvu', 'Deja Vu')
         self.format_combo.append_item('_bw.pdf', 'B/W PDF')
         self.format_combo.append_item('.pdf', 'Color PDF')
+        self.format_combo.append_item('.epub', 'EPUB')
         self.format_combo.set_active(0)
         self.format_combo.props.sensitive = False
         combotool = ToolComboBox(self.format_combo)
@@ -509,6 +511,8 @@ class GetIABooksActivity(activity.Activity):
             format = self.format_combo.props.value
         else:
             format = self._books_toolbar.format_combo.props.value
+        if format == '.epub':
+            journal_entry.metadata['mime_type'] = 'application/epub+zip'
         if format == '.djvu':
             journal_entry.metadata['mime_type'] = 'image/vnd.djvu'
         if format == '.pdf' or format == '_bw.pdf':
