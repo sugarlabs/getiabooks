@@ -59,7 +59,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-04-24 18:48-0500\n"
-"PO-Revision-Date: 2010-03-15 05:24+0200\n"
+"PO-Revision-Date: 2011-01-09 07:56+0200\n"
 "Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: es\n"
@@ -136,7 +136,7 @@ msgstr "Debes indroducir al menos una palabra para buscar."
 
 #: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:399
 msgid "Connection timed out for CSV: "
-msgstr "Se perdio la conexión para CSV:"
+msgstr "Se perdio la conexión para CSV: "
 
 #: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:413
 msgid "Error getting CSV"
