@@ -1,0 +1,133 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-04-24 18:48-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Translate Toolkit 1.6.0\n"
+
+#: activity/activity.info:2
+msgid "Get IA Books"
+msgstr ""
+
+#: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:76
+#: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:262
+msgid "Get Book"
+msgstr ""
+
+#: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:162
+msgid "Enter words from the Author or Title to begin search"
+msgstr ""
+
+#: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:184
+msgid "Title"
+msgstr ""
+
+#: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:189
+#: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:320
+#: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:504
+msgid "Volume"
+msgstr ""
+
+#: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:197
+msgid "Author"
+msgstr ""
+
+#: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:202
+#: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:330
+msgid "Language"
+msgstr ""
+
+#: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:236
+msgid "Books"
+msgstr ""
+
+#: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:328
+msgid "Subject"
+msgstr ""
+
+#: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:329
+msgid "Publisher"
+msgstr ""
+
+#: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:342
+msgid "Download URL"
+msgstr ""
+
+#: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:355
+msgid "Performing lookup, please wait"
+msgstr ""
+
+#: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:360
+#: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:399
+#: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:413
+#: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:451
+#: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:491
+msgid "Error"
+msgstr ""
+
+#: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:360
+msgid "You must enter at least one search word."
+msgstr ""
+
+#: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:399
+msgid "Connection timed out for CSV: "
+msgstr ""
+
+#: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:413
+msgid "Error getting CSV"
+msgstr ""
+
+#: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:427
+msgid "Finished"
+msgstr ""
+
+#: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:451
+msgid "Connection timed out for "
+msgstr ""
+
+#: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:491
+msgid "Could not download "
+msgstr ""
+
+#: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:491
+msgid " path in catalog is incorrect.  "
+msgstr ""
+
+#: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:529
+msgid "Success"
+msgstr ""
+
+#: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:529
+msgid " added to Journal."
+msgstr ""
