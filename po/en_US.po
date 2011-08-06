@@ -31,10 +31,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-04-24 18:48-0500\n"
-"PO-Revision-Date: 2010-06-23 08:25+0200\n"
-"Last-Translator: whe <heppew@yahoo.com>\n"
+"PO-Revision-Date: 2010-12-21 06:16+0200\n"
+"Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: nl\n"
+"Language: en_US\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -43,20 +43,20 @@ msgstr ""
 
 #: activity/activity.info:2
 msgid "Get IA Books"
-msgstr "Neem IA Boeken"
+msgstr "Get IA Books"
 
 #: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:76
 #: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:262
 msgid "Get Book"
-msgstr "Neem Boek"
+msgstr "Get Book"
 
 #: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:162
 msgid "Enter words from the Author or Title to begin search"
-msgstr "Voer woorden van de Auteur of Titel om zoeken te beginnen"
+msgstr "Enter words from the Author or Title to begin search"
 
 #: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:184
 msgid "Title"
-msgstr "Titel"
+msgstr "Title"
 
 #: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:189
 #: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:320
@@ -66,24 +66,24 @@ msgstr "Volume"
 
 #: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:197
 msgid "Author"
-msgstr "Auteur"
+msgstr "Author"
 
 #: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:202
 #: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:330
 msgid "Language"
-msgstr "Taal"
+msgstr "Language"
 
 #: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:236
 msgid "Books"
-msgstr "Boeken"
+msgstr "Books"
 
 #: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:328
 msgid "Subject"
-msgstr "Onderwerp"
+msgstr "Subject"
 
 #: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:329
 msgid "Publisher"
-msgstr "Uitgever"
+msgstr "Publisher"
 
 #: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:342
 msgid "Download URL"
@@ -91,7 +91,7 @@ msgstr "Download URL"
 
 #: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:355
 msgid "Performing lookup, please wait"
-msgstr "Aan het opzoeken, even geduld aub"
+msgstr "Performing lookup, please wait"
 
 #: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:360
 #: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:399
@@ -99,40 +99,40 @@ msgstr "Aan het opzoeken, even geduld aub"
 #: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:451
 #: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:491
 msgid "Error"
-msgstr "Fout"
+msgstr "Error"
 
 #: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:360
 msgid "You must enter at least one search word."
-msgstr "Je moet tenminste één zoekwoord invoeren."
+msgstr "You must enter at least one search word."
 
 #: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:399
 msgid "Connection timed out for CSV: "
-msgstr "Tijdoverschrijding bij verbinding voor CSV: "
+msgstr "Connection timed out for CSV: "
 
 #: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:413
 msgid "Error getting CSV"
-msgstr "Fout nemen CSV"
+msgstr "Error getting CSV"
 
 #: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:427
 msgid "Finished"
-msgstr "Beëindigd"
+msgstr "Finished"
 
 #: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:451
 msgid "Connection timed out for "
-msgstr "Tijdoverschrijding bij verbinding voor "
+msgstr "Connection timed out for "
 
 #: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:491
 msgid "Could not download "
-msgstr "Kan niet downloaden "
+msgstr "Could not download "
 
 #: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:491
 msgid " path in catalog is incorrect.  "
-msgstr " pad in catalogus is niet correct.  "
+msgstr " path in catalog is incorrect.  "
 
 #: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:529
 msgid "Success"
-msgstr "Succes"
+msgstr "Success"
 
 #: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:529
 msgid " added to Journal."
-msgstr " toegevoegd aan Dagboek."
+msgstr " added to Journal."
