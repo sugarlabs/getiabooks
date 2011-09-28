@@ -22,20 +22,28 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-04-24 18:48-0500\n"
-"PO-Revision-Date: 2010-08-01 21:10+0200\n"
-"Last-Translator: தங்கமணி <thangam.arunx@gmail.com>\n"
+"POT-Creation-Date: 2011-08-06 15:49-0500\n"
+"PO-Revision-Date: 2011-07-03 14:48+0200\n"
+"Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: ta\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 2.0.3\n"
+"X-Generator: Pootle 2.0.1\n"
 
 #: activity/activity.info:2
 msgid "Get IA Books"
@@ -103,7 +111,7 @@ msgstr "நீங்கள் கட்டாயம் ஒரு வார்த
 
 #: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:399
 msgid "Connection timed out for CSV: "
-msgstr "CSV க்கான் இணைப்பு அவகாச நேரம் முடிந்தது"
+msgstr "CSV க்கான் இணைப்பு அவகாச நேரம் முடிந்தது "
 
 #: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:413
 msgid "Error getting CSV"
@@ -115,15 +123,15 @@ msgstr "முடிக்கப்பட்டது"
 
 #: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:451
 msgid "Connection timed out for "
-msgstr "இணைப்புக்கான அவகாச நேரம் முடிந்தது"
+msgstr "இணைப்புக்கான அவகாச நேரம் முடிந்தது "
 
 #: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:491
 msgid "Could not download "
-msgstr "பதிவிறக்க முடியவில்லை"
+msgstr "பதிவிறக்க முடியவில்லை "
 
 #: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:491
 msgid " path in catalog is incorrect.  "
-msgstr "கேட் பதிப்பிலுள்ள பாதை தவறானது"
+msgstr " கேட் பதிப்பிலுள்ள பாதை தவறானது  "
 
 #: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:529
 msgid "Success"
@@ -131,4 +139,4 @@ msgstr "வெற்றி"
 
 #: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:529
 msgid " added to Journal."
-msgstr "சஞ்சிகையுடன் சேர்க்கப்பட்டது"
+msgstr " சஞ்சிகையுடன் சேர்க்கப்பட்டது"
