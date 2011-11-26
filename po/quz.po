@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-08-06 15:49-0500\n"
-"PO-Revision-Date: 2011-11-12 18:56+0200\n"
+"PO-Revision-Date: 2011-11-26 08:42+0200\n"
 "Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: quz\n"
@@ -50,7 +50,7 @@ msgstr ""
 #: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:202
 #: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:330
 msgid "Language"
-msgstr ""
+msgstr "Simi"
 
 #  "Libros"
 #: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:236
@@ -104,7 +104,7 @@ msgstr ""
 #  "Terminado"
 #: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:427
 msgid "Finished"
-msgstr ""
+msgstr "Tukukusqa"
 
 #  "Se perdio la conexión para "
 #: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:451
