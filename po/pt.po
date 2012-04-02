@@ -35,7 +35,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-08-06 15:49-0500\n"
-"PO-Revision-Date: 2012-01-16 10:53+0200\n"
+"PO-Revision-Date: 2012-03-16 01:43+0200\n"
 "Last-Translator: Eduardo H. <hoboprimate@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: pt\n"
@@ -111,7 +111,7 @@ msgstr "Deves escrever pelo menos uma palavra de busca."
 
 #: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:399
 msgid "Connection timed out for CSV: "
-msgstr "A ligação expirou para o CSV: "
+msgstr "A ligação expirou o limite de tempo para o CSV: "
 
 #: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:413
 msgid "Error getting CSV"
@@ -119,19 +119,19 @@ msgstr "Erro ao obter o CSV"
 
 #: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:427
 msgid "Finished"
-msgstr "Finalizado"
+msgstr "Terminado"
 
 #: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:451
 msgid "Connection timed out for "
-msgstr "A ligação expirou para "
+msgstr "A ligação expirou o limite de tempo para "
 
 #: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:491
 msgid "Could not download "
-msgstr "Não foi possível tranferir "
+msgstr "Não foi possível transferir "
 
 #: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:491
 msgid " path in catalog is incorrect.  "
-msgstr " caminho no catálogo está incorrecto.  "
+msgstr " caminho no catálogo está incorreto.  "
 
 #: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:529
 msgid "Success"
