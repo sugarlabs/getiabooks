@@ -2,19 +2,20 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-04-24 18:48-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2011-08-06 15:49-0500\n"
+"PO-Revision-Date: 2011-10-22 20:23+0200\n"
+"Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: tzm\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 1.7.0\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Pootle 2.0.5\n"
 
 #: activity/activity.info:2
 msgid "Get IA Books"
@@ -74,7 +75,7 @@ msgstr ""
 #: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:451
 #: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:491
 msgid "Error"
-msgstr ""
+msgstr "ⴰⵏⵣⵔⵉ"
 
 #: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:360
 msgid "You must enter at least one search word."
