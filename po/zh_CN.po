@@ -39,7 +39,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-08-06 15:49-0500\n"
-"PO-Revision-Date: 2012-02-28 22:05+0200\n"
+"PO-Revision-Date: 2012-09-28 06:26+0200\n"
 "Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: zh_CN\n"
@@ -135,7 +135,7 @@ msgstr "无法下载 "
 
 #: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:491
 msgid " path in catalog is incorrect.  "
-msgstr " 目录中的路径不正确。  "
+msgstr " 目录中的路径不正确。 "
 
 #: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:529
 msgid "Success"
