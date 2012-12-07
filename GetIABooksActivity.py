@@ -18,27 +18,28 @@
 import os
 import logging
 import time
-import gtk
+from gi.repository import Gtk
+from gi.repository import Gdk
 import csv
 import urllib
 
 _NEW_TOOLBAR_SUPPORT = True
 try:
-    from sugar.graphics.toolbarbox import ToolbarBox
-    from sugar.activity.widgets import StopButton
+    from sugar3.graphics.toolbarbox import ToolbarBox
+    from sugar3.activity.widgets import StopButton
 except:
     _NEW_TOOLBAR_SUPPORT = False
 
-from sugar.graphics.toolbutton import ToolButton
-from sugar.graphics.toolcombobox import ToolComboBox
-from sugar.graphics.combobox import ComboBox
+from sugar3.graphics.toolbutton import ToolButton
+from sugar3.graphics.toolcombobox import ToolComboBox
+from sugar3.graphics.combobox import ComboBox
 from sugar import profile
-from sugar.activity import activity
+from sugar3.activity import activity
 from sugar import network
-from sugar.datastore import datastore
-from sugar.graphics.alert import NotifyAlert
+from sugar3.datastore import datastore
+from sugar3.graphics.alert import NotifyAlert
 from gettext import gettext as _
-import gobject
+from gi.repository import GObject
 
 _TOOLBAR_BOOKS = 1
 COLUMN_CREATOR = 0
@@ -53,17 +54,17 @@ COLUMN_VOLUME = 8
 
 _logger = logging.getLogger('get-ia-books-activity')
 
-class BooksToolbar(gtk.Toolbar):
+class BooksToolbar(Gtk.Toolbar):
     __gtype_name__ = 'BooksToolbar'
 
     def __init__(self):
-        gtk.Toolbar.__init__(self)
-        book_search_item = gtk.ToolItem()
+        Gtk.Toolbar.__init__(self)
+        book_search_item = Gtk.ToolItem()
 
-        self.search_entry = gtk.Entry()
+        self.search_entry = Gtk.Entry()
         self.search_entry.connect('activate', self.search_entry_activate_cb)
 
-        width = int(gtk.gdk.screen_width() / 2)
+        width = int(Gdk.Screen.width() / 2)
         self.search_entry.set_size_request(width, -1)
 
         book_search_item.add(self.search_entry)
@@ -148,14 +149,13 @@ class GetIABooksActivity(activity.Activity):
         else:
             self.create_old_toolbar()
         
-        self.scrolled = gtk.ScrolledWindow()
-        self.scrolled.set_policy(gtk.POLICY_NEVER, gtk.POLICY_AUTOMATIC)
-        self.scrolled.props.shadow_type = gtk.SHADOW_NONE
-        self.textview = gtk.TextView()
+        self.scrolled = Gtk.ScrolledWindow()
+        self.scrolled.set_policy(Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC)
+        self.textview = Gtk.TextView()
         self.textview.set_editable(False)
         self.textview.set_cursor_visible(False)
-        self.textview.set_wrap_mode(gtk.WRAP_WORD)
-        self.textview.set_justification(gtk.JUSTIFY_LEFT)
+        self.textview.set_justification(Gtk.Justification.CENTER)
+        self.textview.set_wrap_mode(Gtk.WrapMode.WORD)
         self.textview.set_left_margin(50)
         self.textview.set_right_margin(50)
         textbuffer = self.textview.get_buffer()
@@ -167,54 +167,54 @@ class GetIABooksActivity(activity.Activity):
         self._download_content_length = 0
         self._download_content_type = None
 
-        self.ls = gtk.ListStore(gobject.TYPE_STRING, gobject.TYPE_STRING, gobject.TYPE_STRING,  gobject.TYPE_STRING,  \
-                                gobject.TYPE_STRING,  gobject.TYPE_STRING,  gobject.TYPE_STRING,  gobject.TYPE_STRING,  \
-                                gobject.TYPE_STRING)
-        self.treeview = gtk.TreeView(self.ls)
+        self.ls = Gtk.ListStore(GObject.TYPE_STRING, GObject.TYPE_STRING, GObject.TYPE_STRING,  GObject.TYPE_STRING,  \
+                                GObject.TYPE_STRING,  GObject.TYPE_STRING,  GObject.TYPE_STRING,  GObject.TYPE_STRING,  \
+                                GObject.TYPE_STRING)
+        self.treeview = Gtk.TreeView(self.ls)
         self.treeview.set_rules_hint(True)
         self.treeview.set_search_column(COLUMN_TITLE)
         selection = self.treeview.get_selection()
-        selection.set_mode(gtk.SELECTION_SINGLE)
+        selection.set_mode(Gtk.SelectionMode.SINGLE)
         selection.connect("changed", self.selection_cb)
 
-        renderer = gtk.CellRendererText()
-        renderer.set_property('wrap-mode', gtk.WRAP_WORD)
+        renderer = Gtk.CellRendererText()
+        renderer.set_property('wrap-mode', Gtk.WrapMode.WORD)
         renderer.set_property('wrap-width', 500)
         renderer.set_property('width', 500)
-        col = gtk.TreeViewColumn(_('Title'), renderer, text=COLUMN_TITLE)
+        col = Gtk.TreeViewColumn(_('Title'), renderer, text=COLUMN_TITLE)
         col.set_sort_column_id(COLUMN_TITLE)
         self.treeview.append_column(col)
     
-        renderer = gtk.CellRendererText()
-        col = gtk.TreeViewColumn(_('Volume'), renderer, text=COLUMN_VOLUME)
+        renderer = Gtk.CellRendererText()
+        col = Gtk.TreeViewColumn(_('Volume'), renderer, text=COLUMN_VOLUME)
         col.set_sort_column_id(COLUMN_VOLUME)
         self.treeview.append_column(col)
     
-        renderer = gtk.CellRendererText()
-        renderer.set_property('wrap-mode', gtk.WRAP_WORD)
+        renderer = Gtk.CellRendererText()
+        renderer.set_property('wrap-mode', Gtk.WrapMode.WORD)
         renderer.set_property('wrap-width', 200)
         renderer.set_property('width', 200)
-        col = gtk.TreeViewColumn(_('Author'), renderer, text=COLUMN_CREATOR)
+        col = Gtk.TreeViewColumn(_('Author'), renderer, text=COLUMN_CREATOR)
         col.set_sort_column_id(COLUMN_CREATOR)
         self.treeview.append_column(col)
 
-        renderer = gtk.CellRendererText()
-        col = gtk.TreeViewColumn(_('Language'), renderer, text=COLUMN_LANGUAGE)
+        renderer = Gtk.CellRendererText()
+        col = Gtk.TreeViewColumn(_('Language'), renderer, text=COLUMN_LANGUAGE)
         col.set_sort_column_id(COLUMN_LANGUAGE)
         self.treeview.append_column(col)
     
-        self.list_scroller = gtk.ScrolledWindow(hadjustment=None, vadjustment=None)
-        self.list_scroller.set_policy(gtk.POLICY_AUTOMATIC, gtk.POLICY_AUTOMATIC)
+        self.list_scroller = Gtk.ScrolledWindow(hadjustment=None, vadjustment=None)
+        self.list_scroller.set_policy(Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC)
         self.list_scroller.add(self.treeview)
         
-        self.progressbar = gtk.ProgressBar()
-        self.progressbar.set_orientation(gtk.PROGRESS_LEFT_TO_RIGHT)
+        self.progressbar = Gtk.ProgressBar()
+        self.progressbar.set_orientation(Gtk.Orientation.HORIZONTAL)
         self.progressbar.set_fraction(0.0)
         
-        vbox = gtk.VBox()
+        vbox = Gtk.VBox()
         vbox.pack_start(self.progressbar,  False,  False,  10)
-        vbox.pack_start(self.scrolled)
-        vbox.pack_end(self.list_scroller)
+        vbox.add(self.scrolled)
+        vbox.pack_end(self.list_scroller, True, True, 0)
         self.set_canvas(vbox)
         self.treeview.show()
         vbox.show()
@@ -244,12 +244,12 @@ class GetIABooksActivity(activity.Activity):
     def create_new_toolbar(self):
         toolbar_box = ToolbarBox()
 
-        book_search_item = gtk.ToolItem()
+        book_search_item = Gtk.ToolItem()
 
-        self.search_entry = gtk.Entry()
+        self.search_entry = Gtk.Entry()
         self.search_entry.connect('activate', self.search_entry_activate_cb)
 
-        width = int(gtk.gdk.screen_width() / 2.1)
+        width = int(Gdk.Screen.width() / 2.1)
         self.search_entry.set_size_request(width, -1)
 
         book_search_item.add(self.search_entry)
@@ -279,7 +279,7 @@ class GetIABooksActivity(activity.Activity):
 
         self.search_entry.grab_focus()
 
-        separator = gtk.SeparatorToolItem()
+        separator = Gtk.SeparatorToolItem()
         separator.props.draw = False
         separator.set_expand(True)
         toolbar_box.toolbar.insert(separator, -1)
@@ -371,7 +371,7 @@ class GetIABooksActivity(activity.Activity):
             + FL + '=language'
         self.search_url += '&' + FL +  '=publisher&' + FL + '=subject&' + FL + '=title&' + FL + '=volume'
         self.search_url += '&' + SORT + '=title&' + SORT + '&' + SORT + '=&rows=500&save=yes&fmt=csv&xmlsearch=Search'
-        gobject.idle_add(self.download_csv,  self.search_url)
+        GObject.idle_add(self.download_csv,  self.search_url)
     
     def get_book(self):
         if _NEW_TOOLBAR_SUPPORT:
@@ -381,7 +381,7 @@ class GetIABooksActivity(activity.Activity):
             self._books_toolbar.enable_button(False)
             format = self._books_toolbar.format_combo.props.value
         self.progressbar.show()
-        gobject.idle_add(self.download_book,  self.download_url + format)
+        GObject.idle_add(self.download_book,  self.download_url + format)
         
     def download_csv(self,  url):
         print "get csv from",  url
@@ -470,8 +470,8 @@ class GetIABooksActivity(activity.Activity):
                           bytes_downloaded)
         total = self._download_content_length
         self.set_downloaded_bytes(bytes_downloaded,  total)
-        while gtk.events_pending():
-            gtk.main_iteration()
+        while Gtk.events_pending():
+            Gtk.main_iteration()
 
     def set_downloaded_bytes(self, bytes,  total):
         fraction = float(bytes) / float(total)
