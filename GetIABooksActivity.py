@@ -154,7 +154,7 @@ class GetIABooksActivity(activity.Activity):
         self.textview = Gtk.TextView()
         self.textview.set_editable(False)
         self.textview.set_cursor_visible(False)
-        self.textview.set_justification(Gtk.Justification.CENTER)
+        self.textview.set_justification(Gtk.Justification.LEFT)
         self.textview.set_wrap_mode(Gtk.WrapMode.WORD)
         self.textview.set_left_margin(50)
         self.textview.set_right_margin(50)
