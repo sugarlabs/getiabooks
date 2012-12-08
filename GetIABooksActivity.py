@@ -150,7 +150,8 @@ class GetIABooksActivity(activity.Activity):
             self.create_old_toolbar()
         
         self.scrolled = Gtk.ScrolledWindow()
-        self.scrolled.set_policy(Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC)
+        self.scrolled.set_policy(Gtk.PolicyType.NEVER,
+                                 Gtk.PolicyType.AUTOMATIC)
         self.textview = Gtk.TextView()
         self.textview.set_editable(False)
         self.textview.set_cursor_visible(False)
@@ -167,8 +168,10 @@ class GetIABooksActivity(activity.Activity):
         self._download_content_length = 0
         self._download_content_type = None
 
-        self.ls = Gtk.ListStore(GObject.TYPE_STRING, GObject.TYPE_STRING, GObject.TYPE_STRING,  GObject.TYPE_STRING,  \
-                                GObject.TYPE_STRING,  GObject.TYPE_STRING,  GObject.TYPE_STRING,  GObject.TYPE_STRING,  \
+        self.ls = Gtk.ListStore(GObject.TYPE_STRING, GObject.TYPE_STRING,
+                                GObject.TYPE_STRING, GObject.TYPE_STRING,
+                                GObject.TYPE_STRING, GObject.TYPE_STRING, 
+                                GObject.TYPE_STRING, GObject.TYPE_STRING,
                                 GObject.TYPE_STRING)
         self.treeview = Gtk.TreeView(self.ls)
         self.treeview.set_rules_hint(True)
@@ -204,7 +207,8 @@ class GetIABooksActivity(activity.Activity):
         self.treeview.append_column(col)
     
         self.list_scroller = Gtk.ScrolledWindow(hadjustment=None, vadjustment=None)
-        self.list_scroller.set_policy(Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC)
+        self.list_scroller.set_policy(Gtk.PolicyType.NEVER,
+                                      Gtk.PolicyType.AUTOMATIC)
         self.list_scroller.add(self.treeview)
         
         self.progressbar = Gtk.ProgressBar()
