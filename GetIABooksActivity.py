@@ -338,6 +338,7 @@ class GetIABooksActivity(activity.Activity):
             format = self.format_combo.props.value
         else:
             format = self._books_toolbar.format_combo.props.value
+        if not hasattr(self, 'textview'): return
         textbuffer = self.textview.get_buffer()
         textbuffer.set_text(self.book_data + _('Download URL') + ': ' + self.download_url + format)
         if _NEW_TOOLBAR_SUPPORT:
