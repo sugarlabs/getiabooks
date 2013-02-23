@@ -35,7 +35,7 @@ from sugar3.graphics.toolcombobox import ToolComboBox
 from sugar3.graphics.combobox import ComboBox
 from sugar import profile
 from sugar3.activity import activity
-from sugar import network
+from sugar3 import network
 from sugar3.datastore import datastore
 from sugar3.graphics.alert import NotifyAlert
 from gettext import gettext as _
@@ -526,7 +526,7 @@ class GetIABooksActivity(activity.Activity):
         journal_entry.metadata['preview'] = ''
         journal_entry.metadata['icon-color'] = profile.get_color().to_string()
         textbuffer = self.textview.get_buffer()
-        journal_entry.metadata['description'] = textbuffer.get_text(textbuffer.get_start_iter(),  textbuffer.get_end_iter())
+        journal_entry.metadata['description'] = textbuffer.get_text(textbuffer.get_start_iter(),  textbuffer.get_end_iter(),  True)
         journal_entry.file_path = tempfile
         datastore.write(journal_entry)
         os.remove(tempfile)
