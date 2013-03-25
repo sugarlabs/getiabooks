@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-08-06 15:49-0500\n"
+"POT-Creation-Date: 2013-02-24 00:31-0500\n"
 "PO-Revision-Date: 2012-06-29 22:38+0200\n"
 "Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -49,98 +49,100 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 "X-Generator: Pootle 2.0.5\n"
 
-#: activity/activity.info:2
+#. TRANS: "name" option from activity.info file
 msgid "Get IA Books"
 msgstr "Získejte IA Knihy"
 
-#: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:76
-#: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:262
+#. TRANS: "summary" option from activity.info file
+#. TRANS: "description" option from activity.info file
+msgid ""
+"Download thousands of free e-books in PDF, DejaVu, and EPUB formats from the "
+"Internet Archive!"
+msgstr ""
+
+#: GetIABooksActivity.py:77 GetIABooksActivity.py:266
 msgid "Get Book"
 msgstr "Získat knihu"
 
-#: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:162
+#: GetIABooksActivity.py:163
 msgid "Enter words from the Author or Title to begin search"
 msgstr "Zadejte autora nebo název pro započetí hledání"
 
-#: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:184
+#: GetIABooksActivity.py:187
 msgid "Title"
 msgstr "Název"
 
-#: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:189
-#: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:320
-#: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:504
+#: GetIABooksActivity.py:192 GetIABooksActivity.py:324
+#: GetIABooksActivity.py:509
 msgid "Volume"
 msgstr "Obsah"
 
-#: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:197
+#: GetIABooksActivity.py:200
 msgid "Author"
 msgstr "Autor"
 
-#: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:202
-#: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:330
+#: GetIABooksActivity.py:205 GetIABooksActivity.py:334
 msgid "Language"
 msgstr "Jazyk"
 
-#: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:236
+#: GetIABooksActivity.py:240
 msgid "Books"
 msgstr "Knihy"
 
-#: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:328
+#: GetIABooksActivity.py:332
 msgid "Subject"
 msgstr "Téma"
 
-#: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:329
+#: GetIABooksActivity.py:333
 msgid "Publisher"
 msgstr "Vydavatel"
 
-#: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:342
+#: GetIABooksActivity.py:347
 msgid "Download URL"
 msgstr "URL stažení"
 
-#: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:355
+#: GetIABooksActivity.py:360
 msgid "Performing lookup, please wait"
 msgstr "Provádím vyhledávání, čekejte prosím"
 
-#: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:360
-#: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:399
-#: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:413
-#: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:451
-#: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:491
+#: GetIABooksActivity.py:365 GetIABooksActivity.py:404
+#: GetIABooksActivity.py:418 GetIABooksActivity.py:456
+#: GetIABooksActivity.py:496
 msgid "Error"
 msgstr "Chyba"
 
-#: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:360
+#: GetIABooksActivity.py:365
 msgid "You must enter at least one search word."
 msgstr "Musíte zadat alespoň jedno hledané slovo."
 
-#: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:399
+#: GetIABooksActivity.py:404
 msgid "Connection timed out for CSV: "
 msgstr "Čas vypršení spojení pro CVS: "
 
-#: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:413
+#: GetIABooksActivity.py:418
 msgid "Error getting CSV"
 msgstr "Chyba při načítání CSV"
 
-#: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:427
+#: GetIABooksActivity.py:432
 msgid "Finished"
 msgstr "Dokončeno"
 
-#: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:451
+#: GetIABooksActivity.py:456
 msgid "Connection timed out for "
 msgstr "Vypršel časový limit připojení pro "
 
-#: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:491
+#: GetIABooksActivity.py:496
 msgid "Could not download "
 msgstr "Nepodařilo se stáhnout "
 
-#: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:491
+#: GetIABooksActivity.py:496
 msgid " path in catalog is incorrect.  "
 msgstr " cesta v katalogu není správná.  "
 
-#: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:529
+#: GetIABooksActivity.py:534
 msgid "Success"
 msgstr "Úspěch"
 
-#: /home/jim/olpc/getiabooks/mainline/GetIABooksActivity.py:529
+#: GetIABooksActivity.py:534
 msgid " added to Journal."
 msgstr " přidáno do Deníčku."
