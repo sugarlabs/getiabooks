@@ -33,7 +33,7 @@ except:
 from sugar3.graphics.toolbutton import ToolButton
 from sugar3.graphics.toolcombobox import ToolComboBox
 from sugar3.graphics.combobox import ComboBox
-from sugar import profile
+from sugar3 import profile
 from sugar3.activity import activity
 from sugar3 import network
 from sugar3.datastore import datastore
