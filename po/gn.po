@@ -2,23 +2,25 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-02-24 00:31-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2016-05-20 00:02+0000\n"
+"Last-Translator: Chris <cjl@sugarlabs.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: gn\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 1.7.0\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Pootle 2.5.1.1\n"
+"X-POOTLE-MTIME: 1463702553.000000\n"
 
 #. TRANS: "name" option from activity.info file
 msgid "Get IA Books"
-msgstr ""
+msgstr "Hupytu opaite kuatiahai internet Archive"
 
 #. TRANS: "summary" option from activity.info file
 #. TRANS: "description" option from activity.info file
@@ -26,90 +28,92 @@ msgid ""
 "Download thousands of free e-books in PDF, DejaVu, and EPUB formats from the "
 "Internet Archive!"
 msgstr ""
+"Emboguejy hetaiterei kuatiahai rei PDF icha, DejaVu, ha EPUB icha internet "
+"Archive guive!"
 
 #: GetIABooksActivity.py:77 GetIABooksActivity.py:266
 msgid "Get Book"
-msgstr ""
+msgstr "Hupytu kuatiahai"
 
 #: GetIABooksActivity.py:163
 msgid "Enter words from the Author or Title to begin search"
-msgstr ""
+msgstr "Emoĩ ñe'e haihára rehegua téra héragui oñepyrũhag̃ua reka"
 
 #: GetIABooksActivity.py:187
 msgid "Title"
-msgstr ""
+msgstr "Téra"
 
 #: GetIABooksActivity.py:192 GetIABooksActivity.py:324
 #: GetIABooksActivity.py:509
 msgid "Volume"
-msgstr ""
+msgstr "Tuichakue"
 
 #: GetIABooksActivity.py:200
 msgid "Author"
-msgstr ""
+msgstr "Haihára"
 
 #: GetIABooksActivity.py:205 GetIABooksActivity.py:334
 msgid "Language"
-msgstr ""
+msgstr "Ñe'e"
 
 #: GetIABooksActivity.py:240
 msgid "Books"
-msgstr ""
+msgstr "Kuatiañe'ekuéra"
 
 #: GetIABooksActivity.py:332
 msgid "Subject"
-msgstr ""
+msgstr "Mbo'epy"
 
 #: GetIABooksActivity.py:333
 msgid "Publisher"
-msgstr ""
+msgstr "Mbojekuaáva"
 
 #: GetIABooksActivity.py:347
 msgid "Download URL"
-msgstr ""
+msgstr "Mboguejyha URL"
 
 #: GetIABooksActivity.py:360
 msgid "Performing lookup, please wait"
-msgstr ""
+msgstr "Ojeheka hina, eha'arõ ikatutarõ"
 
 #: GetIABooksActivity.py:365 GetIABooksActivity.py:404
 #: GetIABooksActivity.py:418 GetIABooksActivity.py:456
 #: GetIABooksActivity.py:496
 msgid "Error"
-msgstr ""
+msgstr "Jejavy"
 
 #: GetIABooksActivity.py:365
 msgid "You must enter at least one search word."
-msgstr ""
+msgstr "Remoĩnguevaerã peteĩ ñe'ẽndejepe ojeheka hag̃ua"
 
 #: GetIABooksActivity.py:404
 msgid "Connection timed out for CSV: "
-msgstr ""
+msgstr "Okañy joapy CSV: guarã "
 
 #: GetIABooksActivity.py:418
 msgid "Error getting CSV"
-msgstr ""
+msgstr "Jejavy hupytu CSV"
 
 #: GetIABooksActivity.py:432
 msgid "Finished"
-msgstr ""
+msgstr "Japopapapyre"
 
 #: GetIABooksActivity.py:456
 msgid "Connection timed out for "
-msgstr ""
+msgstr "Ojejavy joaju "
 
 #: GetIABooksActivity.py:496
 msgid "Could not download "
-msgstr ""
+msgstr "Ndaikatui oñemboguajy "
 
 #: GetIABooksActivity.py:496
 msgid " path in catalog is incorrect.  "
-msgstr ""
+msgstr " tape ñeĩ mbohysýi kuatiápe oĩ vai.  "
 
 #: GetIABooksActivity.py:534
 msgid "Success"
-msgstr ""
+msgstr "Ñesẽporãmba"
 
 #: GetIABooksActivity.py:534
 msgid " added to Journal."
-msgstr ""
+msgstr " Oñembojo'a kuatiahaipyrepe."
