@@ -43,19 +43,20 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-02-24 00:31-0500\n"
-"PO-Revision-Date: 2010-02-16 07:20+0200\n"
-"Last-Translator: Chris <cjl@laptop.org>\n"
+"PO-Revision-Date: 2016-10-28 02:19+0000\n"
+"Last-Translator: Chris <cjl@sugarlabs.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: sq\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 2.0.1\n"
+"X-Generator: Pootle 2.5.1.1\n"
+"X-POOTLE-MTIME: 1477621168.000000\n"
 
 #. TRANS: "name" option from activity.info file
 msgid "Get IA Books"
-msgstr "Merr IA Libra"
+msgstr "Merrni Libra IA"
 
 #. TRANS: "summary" option from activity.info file
 #. TRANS: "description" option from activity.info file
@@ -63,31 +64,33 @@ msgid ""
 "Download thousands of free e-books in PDF, DejaVu, and EPUB formats from the "
 "Internet Archive!"
 msgstr ""
+"Shkarkoni që nga Internet Archive me mijëra e-libra falas, në format PDF, "
+"DejaVu, dhe EPUB!"
 
 #: GetIABooksActivity.py:77 GetIABooksActivity.py:266
 msgid "Get Book"
-msgstr "Merr Libra"
+msgstr "Merrni Libra"
 
 #: GetIABooksActivity.py:163
 msgid "Enter words from the Author or Title to begin search"
-msgstr "Shkruani fjalë nga Autori apo Titulli për të filluar kërkimin"
+msgstr "Jepni fjalë nga Autori apo Titulli që të fillohet kërkimi"
 
 #: GetIABooksActivity.py:187
 msgid "Title"
-msgstr "Titulli"
+msgstr "Titull"
 
 #: GetIABooksActivity.py:192 GetIABooksActivity.py:324
 #: GetIABooksActivity.py:509
 msgid "Volume"
-msgstr "Zëri"
+msgstr "Vëllim"
 
 #: GetIABooksActivity.py:200
 msgid "Author"
-msgstr "Autori"
+msgstr "Autor"
 
 #: GetIABooksActivity.py:205 GetIABooksActivity.py:334
 msgid "Language"
-msgstr "Gjuha"
+msgstr "Gjuhë"
 
 #: GetIABooksActivity.py:240
 msgid "Books"
@@ -95,7 +98,7 @@ msgstr "Libra"
 
 #: GetIABooksActivity.py:332
 msgid "Subject"
-msgstr "Lënda"
+msgstr "Subjek"
 
 #: GetIABooksActivity.py:333
 msgid "Publisher"
@@ -103,11 +106,11 @@ msgstr "Botues"
 
 #: GetIABooksActivity.py:347
 msgid "Download URL"
-msgstr "Shkarko URL"
+msgstr "URL Shkarkimi"
 
 #: GetIABooksActivity.py:360
 msgid "Performing lookup, please wait"
-msgstr "Duke performuar rregullimin, ju lutem prisni"
+msgstr "Po kryhet kërkimi, ju lutemi, prisni"
 
 #: GetIABooksActivity.py:365 GetIABooksActivity.py:404
 #: GetIABooksActivity.py:418 GetIABooksActivity.py:456
@@ -117,15 +120,15 @@ msgstr "Gabim"
 
 #: GetIABooksActivity.py:365
 msgid "You must enter at least one search word."
-msgstr "Ju duhet të shënoni të paktën një fjalë të kërkimit."
+msgstr "Duhet të jepni të paktën një fjalë për kërkim."
 
 #: GetIABooksActivity.py:404
 msgid "Connection timed out for CSV: "
-msgstr "Lidhja u ndërpre për CSV: "
+msgstr "I mbaroi koha lidhjes për CSV: "
 
 #: GetIABooksActivity.py:418
 msgid "Error getting CSV"
-msgstr "Gabim duke marr CSV"
+msgstr "Gabim në marrje CSV-je"
 
 #: GetIABooksActivity.py:432
 msgid "Finished"
@@ -133,15 +136,15 @@ msgstr "E kryer"
 
 #: GetIABooksActivity.py:456
 msgid "Connection timed out for "
-msgstr "Lidhja u ndërpre për "
+msgstr "I mbaroi koha lidhjes për "
 
 #: GetIABooksActivity.py:496
 msgid "Could not download "
-msgstr "Nuk mund të shkarkohet "
+msgstr "S’u shkarkua dot "
 
 #: GetIABooksActivity.py:496
 msgid " path in catalog is incorrect.  "
-msgstr " kalimi në katalogun është i pasaktë.  "
+msgstr " shtegu për te katalogu është i pasaktë.  "
 
 #: GetIABooksActivity.py:534
 msgid "Success"
@@ -149,4 +152,4 @@ msgstr "Sukses"
 
 #: GetIABooksActivity.py:534
 msgid " added to Journal."
-msgstr " shto në Protokoll."
+msgstr " u shtua te Ditari."
