@@ -2,47 +2,21 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-02-24 00:31-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2017-10-28 22:32+0000\n"
+"Last-Translator: Chris <cjl@sugarlabs.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: ko\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 1.3.0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Pootle 2.5.1.1\n"
+"X-POOTLE-MTIME: 1509229946.000000\n"
 
 #. TRANS: "name" option from activity.info file
 msgid "Get IA Books"
@@ -65,12 +39,12 @@ msgstr ""
 
 #: GetIABooksActivity.py:187
 msgid "Title"
-msgstr ""
+msgstr "제목"
 
 #: GetIABooksActivity.py:192 GetIABooksActivity.py:324
 #: GetIABooksActivity.py:509
 msgid "Volume"
-msgstr ""
+msgstr "과"
 
 #: GetIABooksActivity.py:200
 msgid "Author"
@@ -78,11 +52,11 @@ msgstr ""
 
 #: GetIABooksActivity.py:205 GetIABooksActivity.py:334
 msgid "Language"
-msgstr ""
+msgstr "언어"
 
 #: GetIABooksActivity.py:240
 msgid "Books"
-msgstr ""
+msgstr "책"
 
 #: GetIABooksActivity.py:332
 msgid "Subject"
@@ -104,7 +78,7 @@ msgstr ""
 #: GetIABooksActivity.py:418 GetIABooksActivity.py:456
 #: GetIABooksActivity.py:496
 msgid "Error"
-msgstr ""
+msgstr "에러"
 
 #: GetIABooksActivity.py:365
 msgid "You must enter at least one search word."
@@ -119,8 +93,9 @@ msgid "Error getting CSV"
 msgstr ""
 
 #: GetIABooksActivity.py:432
+#, fuzzy
 msgid "Finished"
-msgstr ""
+msgstr "끝"
 
 #: GetIABooksActivity.py:456
 msgid "Connection timed out for "
@@ -140,4 +115,4 @@ msgstr ""
 
 #: GetIABooksActivity.py:534
 msgid " added to Journal."
-msgstr ""
+msgstr " 일기에 추갔어요"

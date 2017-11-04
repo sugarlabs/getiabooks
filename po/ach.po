@@ -7,19 +7,20 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-02-24 00:31-0500\n"
-"PO-Revision-Date: 2013-04-23 17:55+0200\n"
-"Last-Translator: anushnur <anush.mkrtchyan@ca1492.com>\n"
+"PO-Revision-Date: 2017-10-28 22:06+0000\n"
+"Last-Translator: Chris <cjl@sugarlabs.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: hy\n"
+"Language: ach\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Pootle 2.0.5\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Pootle 2.5.1.1\n"
+"X-POOTLE-MTIME: 1509228419.000000\n"
 
 #. TRANS: "name" option from activity.info file
 msgid "Get IA Books"
-msgstr "Գտնել Գրքեր Համացանցի արխիվից"
+msgstr "Kwany IA Buke"
 
 #. TRANS: "summary" option from activity.info file
 #. TRANS: "description" option from activity.info file
@@ -27,94 +28,93 @@ msgid ""
 "Download thousands of free e-books in PDF, DejaVu, and EPUB formats from the "
 "Internet Archive!"
 msgstr ""
-"Համացանցի արխիվից ներբեռնիր հազարավոր անվճար էլեկտրոնային գրքեր PDF, DejaVu, "
-"և EPUB ձևաչափերով"
+"Kwany ikan okano iye i Net e-buke me nono ame romo tutumia apol ata ikwone "
+"me PDF, DejaVu, kede EPUB!"
 
 #: GetIABooksActivity.py:77 GetIABooksActivity.py:266
 msgid "Get Book"
-msgstr "Ստանալ գիրք"
+msgstr "Nwong Buk"
 
 #: GetIABooksActivity.py:163
 msgid "Enter words from the Author or Title to begin search"
 msgstr ""
-"Մուտքագրեք հեղինակի անվան կամ գրքի վերնագրի մի մասը` որոնումն սկսելու համար:"
+"Co kop ame tye inying aco buk onyo en ame tye inying buk wek icaki yenyo"
 
 #: GetIABooksActivity.py:187
 msgid "Title"
-msgstr "Վերնագիր"
+msgstr "Nying buk"
 
 #: GetIABooksActivity.py:192 GetIABooksActivity.py:324
 #: GetIABooksActivity.py:509
 msgid "Volume"
-msgstr "Հատոր"
+msgstr "Rwom abuk"
 
 #: GetIABooksActivity.py:200
 msgid "Author"
-msgstr "Հեղինակ"
+msgstr "Aco buk"
 
 #: GetIABooksActivity.py:205 GetIABooksActivity.py:334
 msgid "Language"
-msgstr "Լեզու"
+msgstr "Leb"
 
 #: GetIABooksActivity.py:240
 msgid "Books"
-msgstr "Գրքեր"
+msgstr "Buke"
 
 #: GetIABooksActivity.py:332
 msgid "Subject"
-msgstr "Թեմա"
+msgstr "Lok ikom"
 
 #: GetIABooksActivity.py:333
 msgid "Publisher"
-msgstr "Հրատարակիչ"
+msgstr "Layiki"
 
-# URL - Համընդհանուր ռեսուրսների որոնիչ
 #: GetIABooksActivity.py:347
 msgid "Download URL"
-msgstr "Ներբեռնել URL"
+msgstr "Kwany i net URL"
 
 #: GetIABooksActivity.py:360
 msgid "Performing lookup, please wait"
-msgstr "Կատարվում է որոնումը, խնդրվում է սպասել..."
+msgstr "Tye atute me yenyo, tim ber ikuri"
 
 #: GetIABooksActivity.py:365 GetIABooksActivity.py:404
 #: GetIABooksActivity.py:418 GetIABooksActivity.py:456
 #: GetIABooksActivity.py:496
 msgid "Error"
-msgstr "Ձախողում"
+msgstr "Bal"
 
 #: GetIABooksActivity.py:365
 msgid "You must enter at least one search word."
-msgstr "Պետք է մուտքագրվի նվազագույնը որոնման մեկ բառ:"
+msgstr "Myero iketi lok acel moro ame itye kayenyo."
 
 #: GetIABooksActivity.py:404
 msgid "Connection timed out for CSV: "
-msgstr "Կապը ժամասպառվել է CSV համար. "
+msgstr "Cawa me kubere otyeko tum oko pi CSV: "
 
 #: GetIABooksActivity.py:418
 msgid "Error getting CSV"
-msgstr "CSV ստացման ձախողում"
+msgstr "Bal inwongo CSV"
 
 #: GetIABooksActivity.py:432
 msgid "Finished"
-msgstr "Ավարտված է"
+msgstr "Otyeko tum"
 
 #: GetIABooksActivity.py:456
 msgid "Connection timed out for "
-msgstr "Կապի ժամանակը սպառվեց "
+msgstr "Kubere okwanyo oko pi "
 
 #: GetIABooksActivity.py:496
 msgid "Could not download "
-msgstr "Չհաջողվեց ներբեռնել "
+msgstr "Pe romo kwanyo i Net "
 
 #: GetIABooksActivity.py:496
 msgid " path in catalog is incorrect.  "
-msgstr " Գրացուցակում որոնման հղումը/ուղին ճշգրիտ չէ  "
+msgstr " yo atye i katalog pe tye kakare.  "
 
 #: GetIABooksActivity.py:534
 msgid "Success"
-msgstr "Հաջողում"
+msgstr "Otum aber"
 
 #: GetIABooksActivity.py:534
 msgid " added to Journal."
-msgstr " ավելացվեց Մատյանում:"
+msgstr " omedo iJanol."
