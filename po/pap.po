@@ -2,52 +2,25 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-02-24 00:31-0500\n"
-"PO-Revision-Date: 2010-02-25 20:36+0200\n"
-"Last-Translator: Chris <cjl@laptop.org>\n"
+"PO-Revision-Date: 2017-10-28 22:28+0000\n"
+"Last-Translator: Chris <cjl@sugarlabs.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: pap\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 2.0.1\n"
+"X-Generator: Pootle 2.5.1.1\n"
+"X-POOTLE-MTIME: 1509229692.000000\n"
 
 #. TRANS: "name" option from activity.info file
 msgid "Get IA Books"
-msgstr "kohe bo bukinan"
+msgstr "Kohe bo bukinan"
 
 #. TRANS: "summary" option from activity.info file
 #. TRANS: "description" option from activity.info file
@@ -58,11 +31,11 @@ msgstr ""
 
 #: GetIABooksActivity.py:77 GetIABooksActivity.py:266
 msgid "Get Book"
-msgstr "haña buki"
+msgstr "Haña buki"
 
 #: GetIABooksActivity.py:163
 msgid "Enter words from the Author or Title to begin search"
-msgstr "tip palabranan di e autor o título pa kuminsa buska"
+msgstr "Tip palabranan di e autor o título pa kuminsa buska"
 
 #: GetIABooksActivity.py:187
 msgid "Title"
@@ -91,7 +64,7 @@ msgstr "Suheto"
 
 #: GetIABooksActivity.py:333
 msgid "Publisher"
-msgstr "publikadó"
+msgstr "Publikadó"
 
 #: GetIABooksActivity.py:347
 msgid "Download URL"
@@ -99,7 +72,7 @@ msgstr "Download URL"
 
 #: GetIABooksActivity.py:360
 msgid "Performing lookup, please wait"
-msgstr "buskando, porfabor warda un rato"
+msgstr "Buskando, porfabor warda un rato"
 
 #: GetIABooksActivity.py:365 GetIABooksActivity.py:404
 #: GetIABooksActivity.py:418 GetIABooksActivity.py:456
@@ -117,7 +90,7 @@ msgstr "Konekshón ku cvs a kibra: "
 
 #: GetIABooksActivity.py:418
 msgid "Error getting CSV"
-msgstr "a surgi un eròr conectando ku cvs"
+msgstr "A surgi un eròr conectando ku cvs"
 
 #: GetIABooksActivity.py:432
 msgid "Finished"
@@ -125,7 +98,7 @@ msgstr "Terminá"
 
 #: GetIABooksActivity.py:456
 msgid "Connection timed out for "
-msgstr "a perde konekshon pa "
+msgstr "A perde konekshon pa "
 
 #: GetIABooksActivity.py:496
 msgid "Could not download "
@@ -137,8 +110,8 @@ msgstr " trayectoria den e katálogo no ta korrekto.  "
 
 #: GetIABooksActivity.py:534
 msgid "Success"
-msgstr "éksito"
+msgstr "Éksito"
 
 #: GetIABooksActivity.py:534
 msgid " added to Journal."
-msgstr " Agrega den diario."
+msgstr " agrega den diario."

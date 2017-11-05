@@ -2,60 +2,25 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-02-24 00:31-0500\n"
-"PO-Revision-Date: 2011-07-20 11:26+0200\n"
-"Last-Translator: Christian <kryskaka@gmail.com>\n"
+"PO-Revision-Date: 2017-10-28 22:25+0000\n"
+"Last-Translator: Chris <cjl@sugarlabs.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: sw\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 2.0.1\n"
+"X-Generator: Pootle 2.5.1.1\n"
+"X-POOTLE-MTIME: 1509229506.000000\n"
 
 #. TRANS: "name" option from activity.info file
 msgid "Get IA Books"
-msgstr "kupata vitabu vya IA"
+msgstr "Kupata vitabu vya IA"
 
 #. TRANS: "summary" option from activity.info file
 #. TRANS: "description" option from activity.info file
@@ -66,7 +31,7 @@ msgstr ""
 
 #: GetIABooksActivity.py:77 GetIABooksActivity.py:266
 msgid "Get Book"
-msgstr "kupata kitabu"
+msgstr "Kupata kitabu"
 
 #: GetIABooksActivity.py:163
 msgid "Enter words from the Author or Title to begin search"
@@ -74,12 +39,12 @@ msgstr "Ingiza maneno ya mwandishi ama title ukitaka anza kutafuta"
 
 #: GetIABooksActivity.py:187
 msgid "Title"
-msgstr "title"
+msgstr "Title"
 
 #: GetIABooksActivity.py:192 GetIABooksActivity.py:324
 #: GetIABooksActivity.py:509
 msgid "Volume"
-msgstr "kiasi"
+msgstr "Kiasi"
 
 #: GetIABooksActivity.py:200
 msgid "Author"
@@ -87,7 +52,7 @@ msgstr "Mwandishi"
 
 #: GetIABooksActivity.py:205 GetIABooksActivity.py:334
 msgid "Language"
-msgstr "lugha"
+msgstr "Lugha"
 
 #: GetIABooksActivity.py:240
 msgid "Books"
@@ -95,58 +60,58 @@ msgstr "Vitabu"
 
 #: GetIABooksActivity.py:332
 msgid "Subject"
-msgstr "subject"
+msgstr "Subject"
 
 #: GetIABooksActivity.py:333
 msgid "Publisher"
-msgstr "mchapishaji"
+msgstr "Mchapishaji"
 
 #: GetIABooksActivity.py:347
 msgid "Download URL"
-msgstr "download, "
+msgstr "Download URL"
 
 #: GetIABooksActivity.py:360
 msgid "Performing lookup, please wait"
-msgstr "fanya kuangalia juu, tafadhali subiri"
+msgstr "Fanya kuangalia juu, tafadhali subiri"
 
 #: GetIABooksActivity.py:365 GetIABooksActivity.py:404
 #: GetIABooksActivity.py:418 GetIABooksActivity.py:456
 #: GetIABooksActivity.py:496
 msgid "Error"
-msgstr "kosa"
+msgstr "Kosa"
 
 #: GetIABooksActivity.py:365
 msgid "You must enter at least one search word."
-msgstr "lazima kuingiza angalau neno moja watafuta"
+msgstr "Lazima kuingiza angalau neno moja watafuta."
 
 #: GetIABooksActivity.py:404
 msgid "Connection timed out for CSV: "
-msgstr "Uhusiano wakati muafaka kwa ajili ya CSV"
+msgstr "Uhusiano wakati muafaka kwa ajili ya CSV: "
 
 #: GetIABooksActivity.py:418
 msgid "Error getting CSV"
-msgstr "kosa kwa kupata CSV"
+msgstr "Kosa kwa kupata CSV"
 
 #: GetIABooksActivity.py:432
 msgid "Finished"
-msgstr "kumaliza"
+msgstr "Kumaliza"
 
 #: GetIABooksActivity.py:456
 msgid "Connection timed out for "
-msgstr "Uhusiano wakati muafaka kwa ajili ya"
+msgstr "Uhusiano wakati muafaka kwa ajili ya "
 
 #: GetIABooksActivity.py:496
 msgid "Could not download "
-msgstr "hawezi shusha"
+msgstr "Hawezi shusha "
 
 #: GetIABooksActivity.py:496
 msgid " path in catalog is incorrect.  "
-msgstr "njia katika orodha ni sahihi "
+msgstr " njia katika orodha ni sahihi.  "
 
 #: GetIABooksActivity.py:534
 msgid "Success"
-msgstr "mafanikio"
+msgstr "Mafanikio"
 
 #: GetIABooksActivity.py:534
 msgid " added to Journal."
-msgstr "ongezwa kwa gazeti"
+msgstr " ongezwa kwa gazeti."
