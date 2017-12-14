@@ -7,3 +7,4 @@ show_launcher = yes
 activity_version = 8
 license = GPLv2+
 summary = Download thousands of free e-books in PDF, DejaVu, and EPUB formats from the Internet Archive!
+repository = https://github.com/sugarlabs/getiabooks.git
