@@ -18,7 +18,10 @@
 import os
 import logging
 import time
+import gi
+gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk
+gi.require_version('Gdk', '3.0')
 from gi.repository import Gdk
 import csv
 import urllib
