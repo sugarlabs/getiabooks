@@ -2,26 +2,25 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-02-24 00:31-0500\n"
+"POT-Creation-Date: 2017-11-06 08:10+1100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: mi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Translate Toolkit 1.7.0\n"
 
-#. TRANS: "name" option from activity.info file
+#: activity/activity.info:2
 msgid "Get IA Books"
 msgstr ""
 
-#. TRANS: "summary" option from activity.info file
-#. TRANS: "description" option from activity.info file
+#: activity/activity.info:3
 msgid ""
 "Download thousands of free e-books in PDF, DejaVu, and EPUB formats from the "
 "Internet Archive!"
@@ -103,7 +102,9 @@ msgid "Could not download "
 msgstr ""
 
 #: GetIABooksActivity.py:496
-msgid " path in catalog is incorrect.  "
+msgid ""
+" path in catalog is incorrect.    If you tried to download B/W PDF try "
+"another format."
 msgstr ""
 
 #: GetIABooksActivity.py:534

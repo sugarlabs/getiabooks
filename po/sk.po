@@ -34,72 +34,74 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-02-24 00:31-0500\n"
-"PO-Revision-Date: 2011-04-01 07:16+0200\n"
-"Last-Translator: Chris <cjl@laptop.org>\n"
+"POT-Creation-Date: 2017-11-06 08:10+1100\n"
+"PO-Revision-Date: 2018-08-11 17:49+0000\n"
+"Last-Translator: jana <jpastyrova@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Pootle 2.0.1\n"
+"X-Generator: Pootle 2.5.1.1\n"
+"X-POOTLE-MTIME: 1534009791.000000\n"
 
-#. TRANS: "name" option from activity.info file
+#: activity/activity.info:2
 msgid "Get IA Books"
-msgstr ""
+msgstr "Získaj IA knihy"
 
-#. TRANS: "summary" option from activity.info file
-#. TRANS: "description" option from activity.info file
+#: activity/activity.info:3
 msgid ""
 "Download thousands of free e-books in PDF, DejaVu, and EPUB formats from the "
 "Internet Archive!"
 msgstr ""
+"Stiahnite si tisíce e-kníh zadarmo vo formátoch PDF, Deja Vu a EPUV z "
+"Internetového Archívu!"
 
 #: GetIABooksActivity.py:77 GetIABooksActivity.py:266
 msgid "Get Book"
-msgstr ""
+msgstr "Získaj knihu"
 
 #: GetIABooksActivity.py:163
 msgid "Enter words from the Author or Title to begin search"
-msgstr ""
+msgstr "Vložte autora alebo názov knihy a začnite vyhľadávanie"
 
 #: GetIABooksActivity.py:187
 msgid "Title"
-msgstr ""
+msgstr "Názov"
 
 #: GetIABooksActivity.py:192 GetIABooksActivity.py:324
 #: GetIABooksActivity.py:509
 msgid "Volume"
-msgstr ""
+msgstr "Zväzok "
 
 #: GetIABooksActivity.py:200
 msgid "Author"
-msgstr ""
+msgstr "Autor"
 
 #: GetIABooksActivity.py:205 GetIABooksActivity.py:334
 msgid "Language"
-msgstr ""
+msgstr "Jazyk"
 
 #: GetIABooksActivity.py:240
 msgid "Books"
-msgstr ""
+msgstr "Knihy"
 
 #: GetIABooksActivity.py:332
 msgid "Subject"
-msgstr ""
+msgstr "Predmet"
 
 #: GetIABooksActivity.py:333
 msgid "Publisher"
-msgstr ""
+msgstr "Vydavateľstvo"
 
 #: GetIABooksActivity.py:347
 msgid "Download URL"
-msgstr ""
+msgstr "Stiahnite si URL adresu"
 
 #: GetIABooksActivity.py:360
 msgid "Performing lookup, please wait"
-msgstr ""
+msgstr "Vyhľadávanie, prosím čakajte"
 
 #: GetIABooksActivity.py:365 GetIABooksActivity.py:404
 #: GetIABooksActivity.py:418 GetIABooksActivity.py:456
@@ -109,36 +111,40 @@ msgstr "Chyba"
 
 #: GetIABooksActivity.py:365
 msgid "You must enter at least one search word."
-msgstr ""
+msgstr "Musíte zadať aspoň jedno slovo do vyhľadávania."
 
 #: GetIABooksActivity.py:404
 msgid "Connection timed out for CSV: "
-msgstr ""
+msgstr "Pripojenie pre CSV vypršalo:"
 
 #: GetIABooksActivity.py:418
 msgid "Error getting CSV"
-msgstr ""
+msgstr "Chyba pri získavaní CSV"
 
 #: GetIABooksActivity.py:432
 msgid "Finished"
-msgstr ""
+msgstr "Ukončené"
 
 #: GetIABooksActivity.py:456
 msgid "Connection timed out for "
-msgstr ""
+msgstr "Vypršalo pripojenie pre "
 
 #: GetIABooksActivity.py:496
 msgid "Could not download "
-msgstr ""
+msgstr "Nedá sa stiahnuť  "
 
 #: GetIABooksActivity.py:496
-msgid " path in catalog is incorrect.  "
+msgid ""
+" path in catalog is incorrect.    If you tried to download B/W PDF try "
+"another format."
 msgstr ""
+"  dráha v katalógu je nesprávna.          Ak ste už skúšali formáty B/W PDF "
+"skúste iný formát. "
 
 #: GetIABooksActivity.py:534
 msgid "Success"
-msgstr ""
+msgstr "Úspech"
 
 #: GetIABooksActivity.py:534
 msgid " added to Journal."
-msgstr ""
+msgstr "  pridané do Journalu"

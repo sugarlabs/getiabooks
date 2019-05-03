@@ -6,23 +6,23 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-02-24 00:31-0500\n"
-"PO-Revision-Date: 2013-03-16 22:55+0200\n"
-"Last-Translator: Aputsiaq Niels <aj@isit.gl>\n"
+"POT-Creation-Date: 2017-11-06 08:10+1100\n"
+"PO-Revision-Date: 2018-10-20 18:36+0000\n"
+"Last-Translator: scootergrisen <scootergrisen@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 2.0.5\n"
+"X-Generator: Pootle 2.5.1.1\n"
+"X-POOTLE-MTIME: 1540060617.000000\n"
 
-#. TRANS: "name" option from activity.info file
+#: activity/activity.info:2
 msgid "Get IA Books"
 msgstr "Hent IA-bøger"
 
-#. TRANS: "summary" option from activity.info file
-#. TRANS: "description" option from activity.info file
+#: activity/activity.info:3
 msgid ""
 "Download thousands of free e-books in PDF, DejaVu, and EPUB formats from the "
 "Internet Archive!"
@@ -106,8 +106,12 @@ msgid "Could not download "
 msgstr "Kunne ikke hente "
 
 #: GetIABooksActivity.py:496
-msgid " path in catalog is incorrect.  "
-msgstr " sti i katalog er ikke korrekt.  "
+msgid ""
+" path in catalog is incorrect.    If you tried to download B/W PDF try "
+"another format."
+msgstr ""
+" stien i kataloget er forkert.    Hvis du prøvede at downloade sort/hvid "
+"PDF, så prøv et andet format."
 
 #: GetIABooksActivity.py:534
 msgid "Success"
@@ -116,3 +120,6 @@ msgstr "Succes"
 #: GetIABooksActivity.py:534
 msgid " added to Journal."
 msgstr " føjet til Journal."
+
+#~ msgid " path in catalog is incorrect.  "
+#~ msgstr " sti i katalog er ikke korrekt.  "

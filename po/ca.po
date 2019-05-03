@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-02-24 00:31-0500\n"
+"POT-Creation-Date: 2017-11-06 08:10+1100\n"
 "PO-Revision-Date: 2015-09-23 13:17+0000\n"
 "Last-Translator: Robert <rbuj@fedoraproject.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,13 +19,12 @@ msgstr ""
 "X-POOTLE-MTIME: 1443014262.000000\n"
 
 # well-spelled: l'IA
-#. TRANS: "name" option from activity.info file
+#: activity/activity.info:2
 msgid "Get IA Books"
 msgstr "Obtenció de llibres de l'IA"
 
 # well-spelled: PDF, DejaVu, EPUB, Archive
-#. TRANS: "summary" option from activity.info file
-#. TRANS: "description" option from activity.info file
+#: activity/activity.info:3
 msgid ""
 "Download thousands of free e-books in PDF, DejaVu, and EPUB formats from the "
 "Internet Archive!"
@@ -112,8 +111,10 @@ msgid "Could not download "
 msgstr "No s'ha pogut baixar "
 
 #: GetIABooksActivity.py:496
-msgid " path in catalog is incorrect.  "
-msgstr " el camí al catàleg no és correcte.  "
+msgid ""
+" path in catalog is incorrect.    If you tried to download B/W PDF try "
+"another format."
+msgstr ""
 
 #: GetIABooksActivity.py:534
 msgid "Success"
@@ -122,3 +123,6 @@ msgstr "Èxit"
 #: GetIABooksActivity.py:534
 msgid " added to Journal."
 msgstr " es va afegir al diari."
+
+#~ msgid " path in catalog is incorrect.  "
+#~ msgstr " el camí al catàleg no és correcte.  "

@@ -6,9 +6,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-02-24 00:31-0500\n"
-"PO-Revision-Date: 2015-02-19 14:44+0000\n"
-"Last-Translator: Tymon <dwgipk@gmail.com>\n"
+"POT-Creation-Date: 2017-11-06 08:10+1100\n"
+"PO-Revision-Date: 2017-12-18 14:08+0000\n"
+"Last-Translator: jszu <jszu@protonmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
@@ -17,14 +17,13 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
 "X-Generator: Pootle 2.5.1.1\n"
-"X-POOTLE-MTIME: 1424357099.000000\n"
+"X-POOTLE-MTIME: 1513606121.000000\n"
 
-#. TRANS: "name" option from activity.info file
+#: activity/activity.info:2
 msgid "Get IA Books"
 msgstr "Znajdź książki (IA)"
 
-#. TRANS: "summary" option from activity.info file
-#. TRANS: "description" option from activity.info file
+#: activity/activity.info:3
 msgid ""
 "Download thousands of free e-books in PDF, DejaVu, and EPUB formats from the "
 "Internet Archive!"
@@ -108,8 +107,12 @@ msgid "Could not download "
 msgstr "Nie można było pobrać "
 
 #: GetIABooksActivity.py:496
-msgid " path in catalog is incorrect.  "
-msgstr " ścieżka w katalogu jest nieprawidłowa.  "
+msgid ""
+" path in catalog is incorrect.    If you tried to download B/W PDF try "
+"another format."
+msgstr ""
+"  ścieżka w katalogu jest niepoprawna. Jeśli próbowałeś pobrać B/W PDF, "
+"spróbuj ponownie w innym formacie. "
 
 #: GetIABooksActivity.py:534
 msgid "Success"
@@ -118,3 +121,6 @@ msgstr "Udało się"
 #: GetIABooksActivity.py:534
 msgid " added to Journal."
 msgstr " dodane do Dziennika."
+
+#~ msgid " path in catalog is incorrect.  "
+#~ msgstr " ścieżka w katalogu jest nieprawidłowa.  "
