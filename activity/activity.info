@@ -2,7 +2,7 @@
 name = Get IA Books
 bundle_id = org.laptop.sugar.GetIABooksActivity
 icon = get-ia-books
-exec = sugar-activity GetIABooksActivity.GetIABooksActivity
+exec = sugar-activity3 GetIABooksActivity.GetIABooksActivity
 show_launcher = yes
 activity_version = 8
 license = GPLv2+
