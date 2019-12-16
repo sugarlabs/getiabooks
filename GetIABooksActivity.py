@@ -24,7 +24,7 @@ from gi.repository import Gtk
 gi.require_version('Gdk', '3.0')
 from gi.repository import Gdk
 import csv
-import urllib
+import urllib.request, urllib.parse, urllib.error
 
 _NEW_TOOLBAR_SUPPORT = True
 try:
@@ -370,10 +370,10 @@ class GetIABooksActivity(activity.Activity):
             else:
                 self._books_toolbar.search_entry.grab_focus()
             return
-        FL = urllib.quote('fl[]')
-        SORT = urllib.quote('sort[]')
+        FL = urllib.parse.quote('fl[]')
+        SORT = urllib.parse.quote('sort[]')
         self.search_url = 'http://www.archive.org/advancedsearch.php?q=' +  \
-            urllib.quote('(title:(' + search_text.lower() + ') OR creator:(' + search_text.lower() +')) AND format:(DJVU)')
+            urllib.parse.quote('(title:(' + search_text.lower() + ') OR creator:(' + search_text.lower() +')) AND format:(DJVU)')
         self.search_url += '&' + FL + '=creator&' + FL + '=description&' + FL + '=format&' + FL + '=identifier&'  \
             + FL + '=language'
         self.search_url += '&' + FL +  '=publisher&' + FL + '=subject&' + FL + '=title&' + FL + '=volume'
@@ -391,10 +391,10 @@ class GetIABooksActivity(activity.Activity):
         GObject.idle_add(self.download_book,  self.download_url + format)
         
     def download_csv(self,  url):
-        print "get csv from",  url
+        print("get csv from",  url)
         path = os.path.join(self.get_activity_root(), 'instance',
                             'tmp%i.csv' % time.time())
-        print 'path=', path
+        print('path=', path)
         getter = ReadURLDownloader(url)
         getter.connect("finished", self._get_csv_result_cb)
         getter.connect("progress", self._get_csv_progress_cb)
@@ -422,7 +422,7 @@ class GetIABooksActivity(activity.Activity):
         self._download_content_type = None
 
     def _get_csv_result_cb(self, getter, tempfile, suggested_name):
-        print 'Content type:',  self._download_content_type
+        print('Content type:',  self._download_content_type)
         if self._download_content_type.startswith('text/html'):
             # got an error page instead
             self._get_csv_error_cb(getter, 'HTTP Error')
@@ -432,8 +432,8 @@ class GetIABooksActivity(activity.Activity):
     def process_downloaded_csv(self,  tempfile,  suggested_name):
         textbuffer = self.textview.get_buffer()
         textbuffer.set_text(_('Finished'))
-        reader = csv.reader(open(tempfile,  'rb'))
-        reader.next() # skip the first header row.
+        reader = csv.reader(open(tempfile,  'r'))
+        next(reader) # skip the first header row.
         for row in reader:
             if len(row) < 9:
                 self._alert("Server Error",  self.search_url)
