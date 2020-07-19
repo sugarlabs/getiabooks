@@ -102,7 +102,7 @@ class BooksToolbar(Gtk.Toolbar):
         self.activity = activity
 
     def format_changed_cb(self, combo):
-        if self.activity != None:
+        if self.activity is not None:
             self.activity.show_book_data()
 
     def search_entry_activate_cb(self, entry):
