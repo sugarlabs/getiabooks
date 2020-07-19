@@ -318,24 +318,24 @@ class GetIABooksActivity(activity.Activity):
         model = tv.get_model()
         sel = selection.get_selected()
         if sel:
-            model, iter = sel
-            self.book_data = model.get_value(iter,COLUMN_TITLE) + '\n\n'
-            self.selected_title = self.truncate(model.get_value(iter,COLUMN_TITLE),  75)
-            self.selected_volume = model.get_value(iter,COLUMN_VOLUME) 
+            model, iterator = sel
+            self.book_data = model.get_value(iterator,COLUMN_TITLE) + '\n\n'
+            self.selected_title = self.truncate(model.get_value(iterator,COLUMN_TITLE),  75)
+            self.selected_volume = model.get_value(iterator,COLUMN_VOLUME)
             if self.selected_volume != '':
                 self.book_data +=  _('Volume') + ': ' +  self.selected_volume + '\n\n'
-            self.book_data +=  model.get_value(iter,COLUMN_CREATOR) + '\n\n'
-            self.selected_author =  self.truncate(model.get_value(iter,COLUMN_CREATOR),  40)
-            description = model.get_value(iter,COLUMN_DESCRIPTION)
+            self.book_data +=  model.get_value(iterator,COLUMN_CREATOR) + '\n\n'
+            self.selected_author =  self.truncate(model.get_value(iterator,COLUMN_CREATOR),  40)
+            description = model.get_value(iterator,COLUMN_DESCRIPTION)
             if description != '':
                 self.book_data +=  description  + '\n\n'
             subject = model.get_value(iter,COLUMN_SUBJECT) 
             if subject != '':
                 self.book_data +=  _('Subject') + ': ' +  subject + '\n\n'
-            self.book_data +=  _('Publisher') + ': ' + model.get_value(iter,COLUMN_PUBLISHER) + '\n\n'
-            self.book_data +=  _('Language') +': '+ model.get_value(iter,COLUMN_LANGUAGE) + '\n\n'
+            self.book_data +=  _('Publisher') + ': ' + model.get_value(iterator,COLUMN_PUBLISHER) + '\n\n'
+            self.book_data +=  _('Language') +': '+ model.get_value(iterator,COLUMN_LANGUAGE) + '\n\n'
             self.download_url =   'http://www.archive.org/download/' 
-            identifier = model.get_value(iter,COLUMN_IDENTIFIER)
+            identifier = model.get_value(iterator,COLUMN_IDENTIFIER)
             self.download_url +=  identifier + '/' + identifier
             self.show_book_data()
 
@@ -438,8 +438,8 @@ class GetIABooksActivity(activity.Activity):
             if len(row) < 9:
                 self._alert("Server Error",  self.search_url)
                 return
-            iter = self.ls.append()
-            self.ls.set(iter, 0, row[0],  1,  row[1],  2,  row[2],  3,  row[3],  4,  row[4],  5,  row[5],  \
+            iterator = self.ls.append()
+            self.ls.set(iterator, 0, row[0],  1,  row[1],  2,  row[2],  3,  row[3],  4,  row[4],  5,  row[5],  \
                         6,  row[6],  7,  row[7],  8,  row[8])
         os.remove(tempfile)
 
