@@ -43,6 +43,7 @@ from sugar3.datastore import datastore
 from sugar3.graphics.alert import NotifyAlert
 from gettext import gettext as _
 from gi.repository import GObject
+from gi.repository import GLib
 
 _TOOLBAR_BOOKS = 1
 COLUMN_CREATOR = 0
@@ -378,7 +379,7 @@ class GetIABooksActivity(activity.Activity):
             + FL + '=language'
         self.search_url += '&' + FL +  '=publisher&' + FL + '=subject&' + FL + '=title&' + FL + '=volume'
         self.search_url += '&' + SORT + '=title&' + SORT + '&' + SORT + '=&rows=500&save=yes&fmt=csv&xmlsearch=Search'
-        GObject.idle_add(self.download_csv,  self.search_url)
+        GLib.idle_add(self.download_csv,  self.search_url)
     
     def get_book(self):
         if _NEW_TOOLBAR_SUPPORT:
@@ -388,7 +389,7 @@ class GetIABooksActivity(activity.Activity):
             self._books_toolbar.enable_button(False)
             format = self._books_toolbar.format_combo.props.value
         self.progressbar.show()
-        GObject.idle_add(self.download_book,  self.download_url + format)
+        GLib.idle_add(self.download_book,  self.download_url + format)
         
     def download_csv(self,  url):
         print("get csv from",  url)
