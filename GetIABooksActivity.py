@@ -440,7 +440,7 @@ class GetIABooksActivity(activity.Activity):
                 self._alert("Server Error",  self.search_url)
                 return
             iterator = self.ls.append()
-            self.ls.set(iterator, 0, row[0],  1,  row[1],  2,  row[2],  3,  row[3],  4,  row[4],  5,  row[5],  \
+            self.ls.set(iterator, 0, row[0],  1,  row[1],  2,  row[2],  3,  row[3],  4,  row[4],  5,  row[5],
                         6,  row[6],  7,  row[7],  8,  row[8])
         os.remove(tempfile)
 
