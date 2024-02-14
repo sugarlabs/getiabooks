@@ -2,9 +2,9 @@
 name = Get IA Books
 bundle_id = org.laptop.sugar.GetIABooksActivity
 icon = get-ia-books
-exec = sugar-activity GetIABooksActivity.GetIABooksActivity
+exec = sugar-activity3 GetIABooksActivity.GetIABooksActivity
 show_launcher = yes
-activity_version = 8
+activity_version = 9
 license = GPLv2+
 summary = Download thousands of free e-books in PDF, DejaVu, and EPUB formats from the Internet Archive!
 repository = https://github.com/sugarlabs/getiabooks.git
