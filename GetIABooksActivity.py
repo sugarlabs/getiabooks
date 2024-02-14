@@ -1,3 +1,4 @@
+#! /usr/bin/env python3
 # GetIABooksActivity.py
 
 # Copyright (C) 2009, 2010 James D. Simmons
@@ -24,7 +25,7 @@ from gi.repository import Gtk
 gi.require_version('Gdk', '3.0')
 from gi.repository import Gdk
 import csv
-import urllib
+import urllib.request, urllib.parse, urllib.error
 
 _NEW_TOOLBAR_SUPPORT = True
 try:
@@ -85,10 +86,8 @@ class BooksToolbar(Gtk.Toolbar):
 
         self.format_combo = ComboBox()
         self.format_combo.connect('changed', self.format_changed_cb)
-        self.format_combo.append_item('.djvu', 'Deja Vu')
-        self.format_combo.append_item('_bw.pdf', 'B/W PDF')
-        self.format_combo.append_item('.pdf', 'Color PDF')
-        self.format_combo.append_item('.epub', 'EPUB')
+        self.format_combo.append_item('.pdf', 'PDF')
+        self.format_combo.append_item('.djvu', 'DJVU')
         self.format_combo.set_active(0)
         self.format_combo.props.sensitive = False
         combotool = ToolComboBox(self.format_combo)
@@ -274,10 +273,8 @@ class GetIABooksActivity(activity.Activity):
 
         self.format_combo = ComboBox()
         self.format_combo.connect('changed', self.format_changed_cb)
-        self.format_combo.append_item('.djvu', 'Deja Vu')
-        self.format_combo.append_item('_bw.pdf', 'B/W PDF')
-        self.format_combo.append_item('.pdf', 'Color PDF')
-        self.format_combo.append_item('.epub', 'EPUB')
+        self.format_combo.append_item('.pdf', 'PDF')
+        self.format_combo.append_item('.djvu', 'DJVU')
         self.format_combo.set_active(0)
         self.format_combo.props.sensitive = False
         combotool = ToolComboBox(self.format_combo)
@@ -353,6 +350,11 @@ class GetIABooksActivity(activity.Activity):
             self._books_toolbar.enable_button(True)
 
     def find_books(self, search_text):
+        """ https://archive.org/advancedsearch.php?q=title%3A%28Jules+Verne%29+AND+creator%3A%28Jules+Verne%29
+        &fl%5B%5D=creator&fl%5B%5D=description&fl%5B%5D=format&fl%5B%5D=identifier&fl%5B%5D=language&fl%5B
+        %5D=publisher&fl%5B%5D=subject&fl%5B%5D=title&fl%5B%5D=volume&sort%5B%5D=&sort%5B%5D=&sort%5B
+        %5D=&rows=500&page=1&callback=callback&output=csv
+        """
         if _NEW_TOOLBAR_SUPPORT:
             self.enable_button(False)
         else:
@@ -370,14 +372,14 @@ class GetIABooksActivity(activity.Activity):
             else:
                 self._books_toolbar.search_entry.grab_focus()
             return
-        FL = urllib.quote('fl[]')
-        SORT = urllib.quote('sort[]')
-        self.search_url = 'http://www.archive.org/advancedsearch.php?q=' +  \
-            urllib.quote('(title:(' + search_text.lower() + ') OR creator:(' + search_text.lower() +')) AND format:(DJVU)')
+        FL = urllib.parse.quote('fl[]')
+        SORT = urllib.parse.quote('sort[]')
+        self.search_url = 'https://www.archive.org/advancedsearch.php?q=' +  \
+            urllib.parse.quote('(title:(' + search_text.lower() + ') OR creator:(' + search_text.lower() +')) AND mediatype:(texts)')
         self.search_url += '&' + FL + '=creator&' + FL + '=description&' + FL + '=format&' + FL + '=identifier&'  \
             + FL + '=language'
         self.search_url += '&' + FL +  '=publisher&' + FL + '=subject&' + FL + '=title&' + FL + '=volume'
-        self.search_url += '&' + SORT + '=title&' + SORT + '&' + SORT + '=&rows=500&save=yes&fmt=csv&xmlsearch=Search'
+        self.search_url += '&' + SORT + '=title&' + SORT + '&' + SORT + '=&rows=500&page=1&callback=callback&output=csv'
         GObject.idle_add(self.download_csv,  self.search_url)
     
     def get_book(self):
@@ -391,10 +393,10 @@ class GetIABooksActivity(activity.Activity):
         GObject.idle_add(self.download_book,  self.download_url + format)
         
     def download_csv(self,  url):
-        print "get csv from",  url
+        print(("get csv from",  url))
         path = os.path.join(self.get_activity_root(), 'instance',
                             'tmp%i.csv' % time.time())
-        print 'path=', path
+        print(('path=', path))
         getter = ReadURLDownloader(url)
         getter.connect("finished", self._get_csv_result_cb)
         getter.connect("progress", self._get_csv_progress_cb)
@@ -422,7 +424,7 @@ class GetIABooksActivity(activity.Activity):
         self._download_content_type = None
 
     def _get_csv_result_cb(self, getter, tempfile, suggested_name):
-        print 'Content type:',  self._download_content_type
+        print(('Content type:',  self._download_content_type))
         if self._download_content_type.startswith('text/html'):
             # got an error page instead
             self._get_csv_error_cb(getter, 'HTTP Error')
@@ -432,8 +434,8 @@ class GetIABooksActivity(activity.Activity):
     def process_downloaded_csv(self,  tempfile,  suggested_name):
         textbuffer = self.textview.get_buffer()
         textbuffer.set_text(_('Finished'))
-        reader = csv.reader(open(tempfile,  'rb'))
-        reader.next() # skip the first header row.
+        reader = csv.reader(open(tempfile,  'rt'))
+        next(reader) # skip the first header row.
         for row in reader:
             if len(row) < 9:
                 self._alert("Server Error",  self.search_url)
@@ -552,3 +554,4 @@ class GetIABooksActivity(activity.Activity):
     def _alert_cancel_cb(self, alert, response_id):
         self.remove_alert(alert)
         self.textview.grab_focus()
+
