@@ -87,6 +87,7 @@ class BooksToolbar(Gtk.Toolbar):
         self.format_combo = ComboBox()
         self.format_combo.connect('changed', self.format_changed_cb)
         self.format_combo.append_item('.pdf', 'PDF')
+        self.format_combo.append_item('.epub', 'EPUB')
         self.format_combo.append_item('.djvu', 'DJVU')
         self.format_combo.set_active(0)
         self.format_combo.props.sensitive = False
@@ -274,6 +275,7 @@ class GetIABooksActivity(activity.Activity):
         self.format_combo = ComboBox()
         self.format_combo.connect('changed', self.format_changed_cb)
         self.format_combo.append_item('.pdf', 'PDF')
+        self.format_combo.append_item('.epub', 'EPUB')
         self.format_combo.append_item('.djvu', 'DJVU')
         self.format_combo.set_active(0)
         self.format_combo.props.sensitive = False
