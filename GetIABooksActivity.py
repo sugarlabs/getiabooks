@@ -219,7 +219,7 @@ class GetIABooksActivity(activity.Activity):
         self.list_scroller.show()
         self.progressbar.hide()
 
-    def close(self,  skip_save=False):
+    def close(self, skip_save=False):
         "Override the close method so we don't try to create a Journal entry."
         activity.Activity.close(self,  True)
 
@@ -419,7 +419,8 @@ class GetIABooksActivity(activity.Activity):
             getter.start(path)
         except:
             self._alert(_('Error'), _('Connection timed out for ') + self.selected_title)
-           
+            self.treeview.props.sensitive = True
+
         self._download_content_length = getter.get_content_length()
         self._download_content_type = getter.get_content_type()
 
@@ -455,8 +456,7 @@ class GetIABooksActivity(activity.Activity):
         self.enable_button(True)
         self.progressbar.hide()
         _logger.debug("Error getting document: %s", err)
-        self._alert(_('Error'), _('Could not download ') + self.selected_title + _(' path in catalog is incorrect.  ' \
-                                                                                   + '  If you tried to download B/W PDF try another format.'))
+        self._alert(_('Error'), _('Could not download ') + self.selected_title + _(' path in catalog is incorrect.  '))
         self._download_content_length = 0
         self._download_content_type = None
 
