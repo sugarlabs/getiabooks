@@ -308,7 +308,7 @@ class GetIABooksActivity(activity.Activity):
                 self.book_data +=  _('Subject') + ': ' +  subject + '\n\n'
             self.book_data +=  _('Publisher') + ': ' + model.get_value(iter,COLUMN_PUBLISHER) + '\n\n'
             self.book_data +=  _('Language') +': '+ model.get_value(iter,COLUMN_LANGUAGE) + '\n\n'
-            self.download_url =   'http://www.archive.org/download/' 
+            self.download_url =   'https://www.archive.org/download/' 
             identifier = model.get_value(iter,COLUMN_IDENTIFIER)
             self.download_url +=  identifier + '/' + identifier
             self.show_book_data()
