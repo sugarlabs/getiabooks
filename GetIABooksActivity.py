@@ -223,6 +223,9 @@ class GetIABooksActivity(activity.Activity):
         "Override the close method so we don't try to create a Journal entry."
         activity.Activity.close(self,  True)
 
+    def save(self):
+        pass
+
     def create_toolbar(self):
         toolbar_box = ToolbarBox()
 
