@@ -6,3 +6,4 @@ dist/
 locale
 /.project
 /.pydevproject
+/__pycache__/
