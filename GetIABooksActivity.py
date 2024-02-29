@@ -219,13 +219,6 @@ class GetIABooksActivity(activity.Activity):
         self.list_scroller.show()
         self.progressbar.hide()
 
-    def close(self, skip_save=False):
-        "Override the close method so we don't try to create a Journal entry."
-        activity.Activity.close(self,  True)
-
-    def save(self):
-        pass
-
     def create_toolbar(self):
         toolbar_box = ToolbarBox()
 
@@ -343,7 +336,8 @@ class GetIABooksActivity(activity.Activity):
         FL = urllib.parse.quote('fl[]')
         SORT = urllib.parse.quote('sort[]')
         self.search_url = 'https://www.archive.org/advancedsearch.php?q=' +  \
-            urllib.parse.quote('(title:(' + search_text.lower() + ') OR creator:(' + search_text.lower() +')) AND mediatype:(texts)')
+            urllib.parse.quote('(title:(' + search_text.lower() + ') OR creator:(' + search_text.lower() 
+                               +')) AND mediatype:(texts) AND (rights:(Public Domain) OR year:[1800 TO 1940])')
         self.search_url += '&' + FL + '=creator&' + FL + '=description&' + FL + '=format&' + FL + '=identifier&'  \
             + FL + '=language'
         self.search_url += '&' + FL +  '=publisher&' + FL + '=subject&' + FL + '=title&' + FL + '=volume'
