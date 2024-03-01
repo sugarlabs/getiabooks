@@ -304,16 +304,33 @@ class GetIABooksActivity(activity.Activity):
                 self.book_data +=  _('Subject') + ': ' +  subject + '\n\n'
             self.book_data +=  _('Publisher') + ': ' + model.get_value(iter,COLUMN_PUBLISHER) + '\n\n'
             self.book_data +=  _('Language') +': '+ model.get_value(iter,COLUMN_LANGUAGE) + '\n\n'
-            self.download_url =   'https://www.archive.org/download/' 
+            self.booklist_url =   'https://www.archive.org/download/' 
             identifier = model.get_value(iter,COLUMN_IDENTIFIER)
-            self.download_url +=  identifier + '/' + identifier
+            self.booklist_url +=  identifier + '/' + identifier + '_files.xml'
+            self.download_url = 'https://www.archive.org/download/' + identifier
             self.show_book_data()
 
     def show_book_data(self):
         format = self.format_combo.props.value
         if not hasattr(self, 'textview'): return
         textbuffer = self.textview.get_buffer()
-        textbuffer.set_text(self.book_data + _('Download URL') + ': ' + self.download_url + format)
+        req = urllib.request.Request(self.booklist_url)
+        list_names = '';
+        with urllib.request.urlopen(req) as response:
+            Xml_Lines = response.readlines()
+            for line in Xml_Lines:
+                str_line = str(line, encoding='utf-8')
+                if '<file name="' in str_line:
+                    name = str_line.replace('<file name="', '')
+                    name = name.replace('" source="original">', '')
+                    name = name.replace('" source="derivative">', '')
+                    name = name.strip()
+                    if name.endswith('.pdf') or name.endswith('.djvu') or name.endswith('.epub') :
+                        list_names = list_names + name + '\n'
+                    if name.endswith('.pdf'):
+                        self.download_file_name = name.replace('.pdf', '')
+                    
+            textbuffer.set_text(self.book_data + _('Available Files') + ': \n\n' + list_names)
         self.enable_button(True)
 
     def find_books(self, search_text):
@@ -348,7 +365,7 @@ class GetIABooksActivity(activity.Activity):
         self.enable_button(False)
         format = self.format_combo.props.value
         self.progressbar.show()
-        GObject.idle_add(self.download_book,  self.download_url + format)
+        GObject.idle_add(self.download_book, self.download_url + '/' + self.download_file_name + format)
         
     def download_csv(self,  url):
         print(("get csv from",  url))
@@ -396,7 +413,7 @@ class GetIABooksActivity(activity.Activity):
         next(reader) # skip the first header row.
         for row in reader:
             if len(row) < 9:
-                self._alert("Server Error",  self.search_url)
+                # self._alert("Server Error",  self.search_url)
                 return
             iter = self.ls.append()
             self.ls.set(iter, 0, row[0],  1,  row[1],  2,  row[2],  3,  row[3],  4,  row[4],  5,  row[5],  \
