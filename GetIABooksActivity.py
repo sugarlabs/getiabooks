@@ -329,6 +329,10 @@ class GetIABooksActivity(activity.Activity):
                         list_names = list_names + name + '\n'
                     if name.endswith('.pdf'):
                         self.download_file_name = name.replace('.pdf', '')
+                    elif name.endswith('.djvu'):
+                        self.download_file_name = name.replace('.djvu', '')
+                    elif name.endswith('.epub'):
+                        self.download_file_name = name.replace('.epub', '')
                     
             textbuffer.set_text(self.book_data + _('Available Files') + ': \n\n' + list_names)
         self.enable_button(True)
@@ -365,13 +369,14 @@ class GetIABooksActivity(activity.Activity):
         self.enable_button(False)
         format = self.format_combo.props.value
         self.progressbar.show()
+        print("Download URL ", self.download_url + '/' + self.download_file_name + format)
         GObject.idle_add(self.download_book, self.download_url + '/' + self.download_file_name + format)
         
     def download_csv(self,  url):
-        print(("get csv from",  url))
+        print("get csv from",  url)
         path = os.path.join(self.get_activity_root(), 'instance',
                             'tmp%i.csv' % time.time())
-        print(('path=', path))
+        print('path=', path)
         getter = ReadURLDownloader(url)
         getter.connect("finished", self._get_csv_result_cb)
         getter.connect("progress", self._get_csv_progress_cb)
@@ -399,7 +404,7 @@ class GetIABooksActivity(activity.Activity):
         self._download_content_type = None
 
     def _get_csv_result_cb(self, getter, tempfile, suggested_name):
-        print(('Content type:',  self._download_content_type))
+        print('Content type:',  self._download_content_type)
         if self._download_content_type.startswith('text/html'):
             # got an error page instead
             self._get_csv_error_cb(getter, 'HTTP Error')
@@ -413,6 +418,7 @@ class GetIABooksActivity(activity.Activity):
         next(reader) # skip the first header row.
         for row in reader:
             if len(row) < 9:
+                _logger.debug("short row length %s", len(row))
                 # self._alert("Server Error",  self.search_url)
                 return
             iter = self.ls.append()
