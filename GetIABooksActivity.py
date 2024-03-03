@@ -27,13 +27,8 @@ from gi.repository import Gdk
 import csv
 import urllib.request, urllib.parse, urllib.error
 
-_NEW_TOOLBAR_SUPPORT = True
-try:
-    from sugar3.graphics.toolbarbox import ToolbarBox
-    from sugar3.activity.widgets import StopButton
-except:
-    _NEW_TOOLBAR_SUPPORT = False
-
+from sugar3.graphics.toolbarbox import ToolbarBox
+from sugar3.activity.widgets import StopButton
 from sugar3.graphics.toolbutton import ToolButton
 from sugar3.graphics.toolcombobox import ToolComboBox
 from sugar3.graphics.combobox import ComboBox
@@ -147,11 +142,7 @@ class GetIABooksActivity(activity.Activity):
         "The entry point to the Activity"
         activity.Activity.__init__(self, handle,  False)
  
-        if _NEW_TOOLBAR_SUPPORT:
-            self.create_new_toolbar()
-        else:
-            self.create_old_toolbar()
-        
+        self.create_toolbar()
         self.scrolled = Gtk.ScrolledWindow()
         self.scrolled.set_policy(Gtk.PolicyType.NEVER,
                                  Gtk.PolicyType.AUTOMATIC)
@@ -228,27 +219,7 @@ class GetIABooksActivity(activity.Activity):
         self.list_scroller.show()
         self.progressbar.hide()
 
-    def close(self,  skip_save=False):
-        "Override the close method so we don't try to create a Journal entry."
-        activity.Activity.close(self,  True)
-
-    def create_old_toolbar(self):
-        toolbox = activity.ActivityToolbox(self)
-        activity_toolbar = toolbox.get_activity_toolbar()
-        activity_toolbar.keep.props.visible = False
-        activity_toolbar.share.props.visible = False
-        self.set_toolbox(toolbox)
-
-        self._books_toolbar = BooksToolbar()
-        toolbox.add_toolbar(_('Books'), self._books_toolbar)
-        self._books_toolbar.set_activity(self)
-        self._books_toolbar.show()
-
-        toolbox.show()
-        self.toolbox.set_current_toolbar(_TOOLBAR_BOOKS)
-        self._books_toolbar.search_entry.grab_focus()
-        
-    def create_new_toolbar(self):
+    def create_toolbar(self):
         toolbar_box = ToolbarBox()
 
         book_search_item = Gtk.ToolItem()
@@ -333,23 +304,38 @@ class GetIABooksActivity(activity.Activity):
                 self.book_data +=  _('Subject') + ': ' +  subject + '\n\n'
             self.book_data +=  _('Publisher') + ': ' + model.get_value(iter,COLUMN_PUBLISHER) + '\n\n'
             self.book_data +=  _('Language') +': '+ model.get_value(iter,COLUMN_LANGUAGE) + '\n\n'
-            self.download_url =   'http://www.archive.org/download/' 
+            self.booklist_url =   'https://www.archive.org/download/' 
             identifier = model.get_value(iter,COLUMN_IDENTIFIER)
-            self.download_url +=  identifier + '/' + identifier
+            self.booklist_url +=  identifier + '/' + identifier + '_files.xml'
+            self.download_url = 'https://www.archive.org/download/' + identifier
             self.show_book_data()
 
     def show_book_data(self):
-        if _NEW_TOOLBAR_SUPPORT:
-            format = self.format_combo.props.value
-        else:
-            format = self._books_toolbar.format_combo.props.value
+        format = self.format_combo.props.value
         if not hasattr(self, 'textview'): return
         textbuffer = self.textview.get_buffer()
-        textbuffer.set_text(self.book_data + _('Download URL') + ': ' + self.download_url + format)
-        if _NEW_TOOLBAR_SUPPORT:
-            self.enable_button(True)
-        else:
-            self._books_toolbar.enable_button(True)
+        req = urllib.request.Request(self.booklist_url)
+        list_names = '';
+        with urllib.request.urlopen(req) as response:
+            Xml_Lines = response.readlines()
+            for line in Xml_Lines:
+                str_line = str(line, encoding='utf-8')
+                if '<file name="' in str_line:
+                    name = str_line.replace('<file name="', '')
+                    name = name.replace('" source="original">', '')
+                    name = name.replace('" source="derivative">', '')
+                    name = name.strip()
+                    if name.endswith('.pdf') or name.endswith('.djvu') or name.endswith('.epub') :
+                        list_names = list_names + name + '\n'
+                    if name.endswith('.pdf'):
+                        self.download_file_name = name.replace('.pdf', '')
+                    elif name.endswith('.djvu'):
+                        self.download_file_name = name.replace('.djvu', '')
+                    elif name.endswith('.epub'):
+                        self.download_file_name = name.replace('.epub', '')
+                    
+            textbuffer.set_text(self.book_data + _('Available Files') + ': \n\n' + list_names)
+        self.enable_button(True)
 
     def find_books(self, search_text):
         """ https://archive.org/advancedsearch.php?q=title%3A%28Jules+Verne%29+AND+creator%3A%28Jules+Verne%29
@@ -357,10 +343,7 @@ class GetIABooksActivity(activity.Activity):
         %5D=publisher&fl%5B%5D=subject&fl%5B%5D=title&fl%5B%5D=volume&sort%5B%5D=&sort%5B%5D=&sort%5B
         %5D=&rows=500&page=1&callback=callback&output=csv
         """
-        if _NEW_TOOLBAR_SUPPORT:
-            self.enable_button(False)
-        else:
-            self._books_toolbar.enable_button(False)
+        self.enable_button(False)
         self.clear_downloaded_bytes()
         textbuffer = self.textview.get_buffer()
         textbuffer.set_text(_('Performing lookup, please wait') + '...')
@@ -369,15 +352,13 @@ class GetIABooksActivity(activity.Activity):
         search_tuple = search_text.lower().split()
         if len(search_tuple) == 0:
             self._alert(_('Error'), _('You must enter at least one search word.'))
-            if _NEW_TOOLBAR_SUPPORT:
-                self.search_entry.grab_focus()
-            else:
-                self._books_toolbar.search_entry.grab_focus()
+            self.search_entry.grab_focus()
             return
         FL = urllib.parse.quote('fl[]')
         SORT = urllib.parse.quote('sort[]')
         self.search_url = 'https://www.archive.org/advancedsearch.php?q=' +  \
-            urllib.parse.quote('(title:(' + search_text.lower() + ') OR creator:(' + search_text.lower() +')) AND mediatype:(texts)')
+            urllib.parse.quote('(title:(' + search_text.lower() + ') OR creator:(' + search_text.lower() 
+                               +')) AND mediatype:(texts) AND (rights:(Public Domain) OR year:[1800 TO 1940])')
         self.search_url += '&' + FL + '=creator&' + FL + '=description&' + FL + '=format&' + FL + '=identifier&'  \
             + FL + '=language'
         self.search_url += '&' + FL +  '=publisher&' + FL + '=subject&' + FL + '=title&' + FL + '=volume'
@@ -385,20 +366,17 @@ class GetIABooksActivity(activity.Activity):
         GObject.idle_add(self.download_csv,  self.search_url)
     
     def get_book(self):
-        if _NEW_TOOLBAR_SUPPORT:
-            self.enable_button(False)
-            format = self.format_combo.props.value
-        else:
-            self._books_toolbar.enable_button(False)
-            format = self._books_toolbar.format_combo.props.value
+        self.enable_button(False)
+        format = self.format_combo.props.value
         self.progressbar.show()
-        GObject.idle_add(self.download_book,  self.download_url + format)
+        print("Download URL ", self.download_url + '/' + self.download_file_name + format)
+        GObject.idle_add(self.download_book, self.download_url + '/' + self.download_file_name + format)
         
     def download_csv(self,  url):
-        print(("get csv from",  url))
+        print("get csv from",  url)
         path = os.path.join(self.get_activity_root(), 'instance',
                             'tmp%i.csv' % time.time())
-        print(('path=', path))
+        print('path=', path)
         getter = ReadURLDownloader(url)
         getter.connect("finished", self._get_csv_result_cb)
         getter.connect("progress", self._get_csv_progress_cb)
@@ -426,7 +404,7 @@ class GetIABooksActivity(activity.Activity):
         self._download_content_type = None
 
     def _get_csv_result_cb(self, getter, tempfile, suggested_name):
-        print(('Content type:',  self._download_content_type))
+        print('Content type:',  self._download_content_type)
         if self._download_content_type.startswith('text/html'):
             # got an error page instead
             self._get_csv_error_cb(getter, 'HTTP Error')
@@ -440,7 +418,8 @@ class GetIABooksActivity(activity.Activity):
         next(reader) # skip the first header row.
         for row in reader:
             if len(row) < 9:
-                self._alert("Server Error",  self.search_url)
+                _logger.debug("short row length %s", len(row))
+                # self._alert("Server Error",  self.search_url)
                 return
             iter = self.ls.append()
             self.ls.set(iter, 0, row[0],  1,  row[1],  2,  row[2],  3,  row[3],  4,  row[4],  5,  row[5],  \
@@ -460,7 +439,8 @@ class GetIABooksActivity(activity.Activity):
             getter.start(path)
         except:
             self._alert(_('Error'), _('Connection timed out for ') + self.selected_title)
-           
+            self.treeview.props.sensitive = True
+
         self._download_content_length = getter.get_content_length()
         self._download_content_type = getter.get_content_type()
 
@@ -493,14 +473,10 @@ class GetIABooksActivity(activity.Activity):
 
     def _get_book_error_cb(self, getter, err):
         self.treeview.props.sensitive = True
-        if _NEW_TOOLBAR_SUPPORT:
-            self.enable_button(True)
-        else:
-            self._books_toolbar.enable_button(True)
+        self.enable_button(True)
         self.progressbar.hide()
         _logger.debug("Error getting document: %s", err)
-        self._alert(_('Error'), _('Could not download ') + self.selected_title + _(' path in catalog is incorrect.  ' \
-                                                                                   + '  If you tried to download B/W PDF try another format.'))
+        self._alert(_('Error'), _('Could not download ') + self.selected_title + _(' path in catalog is incorrect.  '))
         self._download_content_length = 0
         self._download_content_type = None
 
@@ -518,10 +494,7 @@ class GetIABooksActivity(activity.Activity):
         journal_entry.metadata['title'] = journal_title
         journal_entry.metadata['title_set_by_user'] = '1'
         journal_entry.metadata['keep'] = '0'
-        if _NEW_TOOLBAR_SUPPORT:
-            format = self.format_combo.props.value
-        else:
-            format = self._books_toolbar.format_combo.props.value
+        format = self.format_combo.props.value
         if format == '.epub':
             journal_entry.metadata['mime_type'] = 'application/epub+zip'
         if format == '.djvu':
