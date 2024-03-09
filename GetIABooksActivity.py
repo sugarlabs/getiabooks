@@ -369,14 +369,11 @@ class GetIABooksActivity(activity.Activity):
         self.enable_button(False)
         format = self.format_combo.props.value
         self.progressbar.show()
-        print("Download URL ", self.download_url + '/' + self.download_file_name + format)
         GObject.idle_add(self.download_book, self.download_url + '/' + self.download_file_name + format)
         
     def download_csv(self,  url):
-        print("get csv from",  url)
         path = os.path.join(self.get_activity_root(), 'instance',
                             'tmp%i.csv' % time.time())
-        print('path=', path)
         getter = ReadURLDownloader(url)
         getter.connect("finished", self._get_csv_result_cb)
         getter.connect("progress", self._get_csv_progress_cb)
@@ -404,7 +401,6 @@ class GetIABooksActivity(activity.Activity):
         self._download_content_type = None
 
     def _get_csv_result_cb(self, getter, tempfile, suggested_name):
-        print('Content type:',  self._download_content_type)
         if self._download_content_type.startswith('text/html'):
             # got an error page instead
             self._get_csv_error_cb(getter, 'HTTP Error')
