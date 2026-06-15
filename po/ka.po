@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-03-02 08:09-0600\n"
-"PO-Revision-Date: 2026-06-15 08:49+0000\n"
+"PO-Revision-Date: 2026-06-15 16:05+0000\n"
 "Last-Translator: NF <rkavt@smartprojects.ge>\n"
 "Language-Team: Georgian <http://weblate.sugarlabs.org/projects/"
 "sugar-activities/getiabooks/ka/>\n"
@@ -48,11 +48,11 @@ msgstr "მოცულობა"
 
 #: GetIABooksActivity.py:194
 msgid "Author"
-msgstr ""
+msgstr "ავტორი"
 
 #: GetIABooksActivity.py:199 GetIABooksActivity.py:306
 msgid "Language"
-msgstr ""
+msgstr "ენა"
 
 #: GetIABooksActivity.py:304
 msgid "Subject"
@@ -60,7 +60,7 @@ msgstr ""
 
 #: GetIABooksActivity.py:305
 msgid "Publisher"
-msgstr ""
+msgstr "გამომცემელი"
 
 #: GetIABooksActivity.py:337
 msgid "Available Files"
@@ -90,7 +90,7 @@ msgstr ""
 
 #: GetIABooksActivity.py:416
 msgid "Finished"
-msgstr ""
+msgstr "დასრულდა"
 
 #: GetIABooksActivity.py:441
 msgid "Connection timed out for "
