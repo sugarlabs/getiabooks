@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-03-02 08:09-0600\n"
-"PO-Revision-Date: 2026-06-15 16:05+0000\n"
+"PO-Revision-Date: 2026-06-30 00:37+0000\n"
 "Last-Translator: NF <rkavt@smartprojects.ge>\n"
 "Language-Team: Georgian <http://weblate.sugarlabs.org/projects/"
 "sugar-activities/getiabooks/ka/>\n"
@@ -56,7 +56,7 @@ msgstr "ენა"
 
 #: GetIABooksActivity.py:304
 msgid "Subject"
-msgstr ""
+msgstr "თემა"
 
 #: GetIABooksActivity.py:305
 msgid "Publisher"
@@ -111,3 +111,7 @@ msgstr "წარმატება"
 #: GetIABooksActivity.py:513
 msgid " added to Journal."
 msgstr " ჩაემატა ჟურნალში."
+
+#: GetIABooksActivity.py:240
+msgid "Books"
+msgstr "წიგნები"
